@@ -1,6 +1,6 @@
 #!/bin/bash
 
-VERSION=11.9.0
+VERSION=9.4.0
 
 cd molcalc/static/
 
