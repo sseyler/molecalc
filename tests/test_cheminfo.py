@@ -13,7 +13,7 @@ TEST_ERROR_SMILES = ["C[NH4+]"]
 @pytest.mark.parametrize("smiles", TEST_ERROR_SMILES)
 def test_capture_error(smiles):
 
-    molobj, msg = chembridge.smiles_to_molobj(smiles, return_status=True)
+    molobj, msg = chembridge.smiles_to_molobj(smiles)
 
     assert "ERROR" in msg
     assert molobj is None
