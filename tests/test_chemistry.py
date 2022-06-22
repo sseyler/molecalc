@@ -44,9 +44,6 @@ def test_small_smiles(smi):
     assert isinstance(prop_vib, dict)
     assert isinstance(prop_orb, dict)
     assert isinstance(prop_sol, dict)
-    print("\n*****************************************************")
-    print('prop_sol:', prop_sol)
-    print("*****************************************************\n")
 
     # Single atoms don't vibrate
     if n_atoms > 1:
