@@ -1,0 +1,21 @@
+name: molcalc
+dependencies:
+  - rdkit
+  - plaster_pastedeploy
+  - pyramid
+  - pyramid_jinja2
+  - pyramid_debugtoolbar
+  - waitress
+  - alembic
+  - pyramid_tm
+  - SQLAlchemy
+  - transaction
+  - zope.sqlalchemy
+  - numpy
+  - scipy
+  - rmsd
+  - networkx
+  - rich
+  - pip
+  - pip:
+    - pyramid_retry
