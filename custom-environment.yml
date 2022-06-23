@@ -9,7 +9,6 @@ dependencies:
   - pyramid
   - pyramid_debugtoolbar
   - pyramid_jinja2
-  - pyramid_retry
   - pyramid_tm
   - rich
   - rmsd
@@ -21,4 +20,4 @@ dependencies:
   - jinja2=3.0
   - pip
   - pip:
-    - pyramid_retry
+    - pyramid-retry
