@@ -15,7 +15,7 @@ GAMESS_OPTIONS = {
 }
 
 
-SMALL_SMILES = ["[Na+]", "[O-2]", "[H-]", "[H][H]", "N#N", "[C]"]
+SMALL_SMILES = ["[O-2]", "[H-]", "[H][H]", "N#N", "[C]"]
 
 
 @pytest.mark.parametrize("smi", SMALL_SMILES)
