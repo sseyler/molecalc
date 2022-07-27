@@ -28,6 +28,7 @@ def calculation_pipeline(molinfo, settings):
     sdfstr = molinfo["sdfstr"]
     hashkey = molinfo["hashkey"]
 
+    theory_level = settings['theory_level']
     scratch_dir = settings["scr.scr"]
     scratch_dir = pathlib.Path(scratch_dir)
 
@@ -58,7 +59,7 @@ def calculation_pipeline(molinfo, settings):
         "gamess_userscr": settings["gamess.userscr"],
         "scr": hashdir,
         "filename": hashkey,
-        'theory_level': settings['theory_level']
+        'theory_level': theory_level
     }
 
     # TODO Add error messages when gamess fails
@@ -179,6 +180,7 @@ def calculation_pipeline(molinfo, settings):
     calculation.hashkey = hashkey
     calculation.sdf = sdfstr
     calculation.svg = svgstr
+    calculation.theorylvl = theory_level
     calculation.created = datetime.datetime.now()
 
     return msg, calculation

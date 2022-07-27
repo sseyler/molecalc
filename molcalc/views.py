@@ -221,8 +221,10 @@ def ajax_submitquantum(request):
     add_hydrogens = add_hydrogens == "1"
 
     # Get theory level
-    theory_level = request.POST.get("theory_level", "pm3")
+    theory_level = request.POST.get("theory_level", None)
     _logger.info(f'Selected theory level: "{theory_level}"')
+    if theory_level is None:
+        raise ValueError
 
     # Get rdkit
     molobj, status = chembridge.sdfstr_to_molobj(sdfstr, return_status=True)

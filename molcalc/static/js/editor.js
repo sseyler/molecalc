@@ -220,46 +220,62 @@ $('.toolset .load_water').click(function () {
 ///////////////////////////////////////////////////////////////////////////////
 function getTheoryLevel()
 {
-    id = $('.toolset.quantum .action.theory .button.active').attr("id");
-    return id;
+    var rel = $('.toolset.quantum .button.theory.active').attr("rel");
+    return rel;
 }
 
+//-----------------------------------------------------------------------------
 //var $theoryBtns = $('.action.theory .button')
-$('.action.theory .button').click(function () {
+//var $theoryBtns = $('.button.theory')
+//$theoryBtns.click(function () {
+//
+//    $that = $(this);
+//
+//    if( $that.hasClass('active') ) {
+//        return false;
+//    }
+//
+//    var lvl = $that.attr('rel');  // theory level of active button
+//
+////    $(this).removeClass('active');
+////    $('.toolset.quantum .action.theory .button.active').removeClass('active');
+//    $theoryBtns.removeClass('active');
+//
+//    switch(lvl) {
+//        case 'am1':
+//            // Do any necessary stuff for AM1
+//            $that.addClass('active');
+//            break;
+//        case 'pm3':
+//            // Do any necessary stuff for PM3
+//            $that.addClass('active');
+//            break;
+//        case 'pm6':
+//            // Do any necessary stuff for PM6
+//            $that.addClass('active');
+//            break;
+//        default:
+//            // Do any necessary stuff
+//            $that.addClass('active');
+//    }
+//
+//    return false;
+//
+//});
 
-    $that = $(this);
-
-    if( $that.hasClass('active') ) {
-        return false;
-    }
-
-    var lvl = $that.attr('rel');  // theory level of active button
-
-//    $(this).removeClass('active');
-//    $('.toolset.quantum .action.theory .button.active').removeClass('active');
-    $('.action.theory .button.active').removeClass('active');
-
-    switch(lvl) {
-        case 'am1':
-            // Do any necessary stuff for AM1
-            $that.addClass('active');
-            break;
-        case 'pm3':
-            // Do any necessary stuff for PM3
-            $that.addClass('active');
-            break;
-        case 'pm6':
-            // Do any necessary stuff for PM6
-            $that.addClass('active');
-            break;
-        default:
-            // Do any necessary stuff
-            $that.addClass('active');
-    }
+//-----------------------------------------------------------------------------
+//var theoryBtns = $('.toolset.quantum .button.theory');
+$('.button.theory').click(function()
+{
+    var lvl = theoryBtns.attr('rel');  // theory level of active button
+    $(".toolset.quantum .button.theory.active").removeClass('active');
+    theoryBtns.addClass('active');
 
     return false;
-
 });
+
+//-----------------------------------------------------------------------------
+
 
 
 
