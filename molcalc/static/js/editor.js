@@ -289,10 +289,10 @@ $('.button.quantum').click(function () {
         var theoryLevel = getTheoryLevel();
 
         var sdf_data = {
-            sdf:mol,
-            add_hydrogens:addHydrogens,
-            current_view:currentView,
-            theory_level:theoryLevel
+            sdf : mol,
+            add_hydrogens : addHydrogens,
+            current_view : currentView,
+            theory_level : theoryLevel
         }
 
         request("/ajax/submitquantum", sdf_data, function (data)

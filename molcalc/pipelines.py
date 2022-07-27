@@ -58,6 +58,7 @@ def calculation_pipeline(molinfo, settings):
         "gamess_userscr": settings["gamess.userscr"],
         "scr": hashdir,
         "filename": hashkey,
+        'theory_level': settings['theory_level']
     }
 
     # TODO Add error messages when gamess fails

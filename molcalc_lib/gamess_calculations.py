@@ -10,9 +10,8 @@ MAX_TIME = 10  # seconds
 
 
 def optimize_coordinates(molobj, gamess_options):
-
     calculation_options = {
-        "basis": {"gbasis": "PM3"},
+        "basis": {"gbasis": gamess_options['theory_level']},
         "contrl": {"runtyp": "optimize"},
         "statpt": {"opttol": 0.0005, "nstep": 300, "projct": False},
     }
@@ -28,10 +27,9 @@ def optimize_coordinates(molobj, gamess_options):
 
 
 def calculate_vibrations(molobj, gamess_options):
-
     # Vibrate molecule
     calculation_options = {
-        "basis": {"gbasis": "PM3"},
+        "basis": {"gbasis": gamess_options['theory_level']},
         "contrl": {"runtyp": "hessian", "maxit": 60},
     }
 

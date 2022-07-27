@@ -222,7 +222,7 @@ def ajax_submitquantum(request):
 
     # Get theory level
     theory_level = request.POST.get("theory_level", "pm3")
-    print(theory_level)
+    _logger.info(f'Selected theory level: "{theory_level}"')
 
     # Get rdkit
     molobj, status = chembridge.sdfstr_to_molobj(sdfstr, return_status=True)
@@ -272,8 +272,13 @@ def ajax_submitquantum(request):
         sdfstr = sdfstr[i + 1 :]
     sdfstr = "\n" * 3 + sdfstr
 
+    # Inject numerical calculation parameters (e.g., "theory_level") in
+    # the generated hashkey so the existence of a calculation depends not only
+    # only on the input structure but also the selected numerical inputs
+    calc_str = f'{sdfstr}\n{theory_level}'
+
     # hash on sdf (conformer)
-    hshobj = hashlib.md5(sdfstr.encode())
+    hshobj = hashlib.md5(calc_str.encode())
     hashkey = hshobj.hexdigest()
 
     # Check if hash/calculation already exists in db
@@ -294,6 +299,7 @@ def ajax_submitquantum(request):
     _logger.info(f"{hashkey} create")
 
     molecule_info = {"sdfstr": sdfstr, "molobj": molobj, "hashkey": hashkey}
+    settings['theory_level'] = theory_level
 
     try:
         msg, new_calculation = pipelines.calculation_pipeline(
