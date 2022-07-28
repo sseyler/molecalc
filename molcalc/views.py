@@ -187,10 +187,7 @@ def ajax_submitquantum(request):
     Setup quantum calculation
 
     """
-    print(80*'-')
-    print('request:\n', request)
-    print(80*'-')
-    print('request.POST:\n', request.POST)
+
     settings = request.registry.settings
 
     # Check if user is someone who is a know misuser
