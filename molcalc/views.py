@@ -187,7 +187,10 @@ def ajax_submitquantum(request):
     Setup quantum calculation
 
     """
-
+    print(80*'-')
+    print('request:\n', request)
+    print(80*'-')
+    print('request.POST:\n', request.POST)
     settings = request.registry.settings
 
     # Check if user is someone who is a know misuser
@@ -213,6 +216,12 @@ def ajax_submitquantum(request):
             "message": "Error. Missing information.",
         }
 
+    if not request.POST["theory_level"]:
+        return {
+            "error": "Error XXX - theory level key error",
+            "message": "Error. Missing information.",
+        }
+
     # Get coordinates from request
     sdfstr = request.POST["sdf"].encode("utf-8")
 
@@ -221,10 +230,8 @@ def ajax_submitquantum(request):
     add_hydrogens = add_hydrogens == "1"
 
     # Get theory level
-    theory_level = request.POST.get("theory_level", None)
+    theory_level = request.POST.get('theory_level', 'pm3')
     _logger.info(f'Selected theory level: "{theory_level}"')
-    if theory_level is None:
-        raise ValueError
 
     # Get rdkit
     molobj, status = chembridge.sdfstr_to_molobj(sdfstr, return_status=True)

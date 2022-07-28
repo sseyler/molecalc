@@ -218,11 +218,24 @@ $('.toolset .load_water').click(function () {
 ///////////////////////////////////////////////////////////////////////////////
 // Select theory level for quantum chemistry
 ///////////////////////////////////////////////////////////////////////////////
-function getTheoryLevel()
-{
-    var rel = $('.toolset.quantum .button.theory.active').attr("rel");
-    return rel;
+function getTheoryLevel() {
+    var lvl = $('.toolset.quantum .button.theory.active').attr('rel');
+    return lvl;
 }
+
+//-----------------------------------------------------------------------------
+//var theoryBtns = $('.toolset.quantum .button.theory');
+$('.button.theory').click(function() {
+
+    if( $(this).hasClass('active') ) {
+        return false;
+    }
+
+    $('.toolset.quantum .button.theory.active').removeClass('active');
+    $(this).addClass('active');
+
+    return false;
+});
 
 //-----------------------------------------------------------------------------
 //var $theoryBtns = $('.action.theory .button')
@@ -264,17 +277,6 @@ function getTheoryLevel()
 //});
 
 //-----------------------------------------------------------------------------
-//var theoryBtns = $('.toolset.quantum .button.theory');
-$('.button.theory').click(function()
-{
-    var lvl = theoryBtns.attr('rel');  // theory level of active button
-    $(".toolset.quantum .button.theory.active").removeClass('active');
-    theoryBtns.addClass('active');
-
-    return false;
-});
-
-//-----------------------------------------------------------------------------
 
 
 
@@ -305,10 +307,10 @@ $('.button.quantum').click(function () {
         var theoryLevel = getTheoryLevel();
 
         var sdf_data = {
-            sdf : mol,
-            add_hydrogens : addHydrogens,
-            current_view : currentView,
-            theory_level : theoryLevel
+            sdf: mol,
+            add_hydrogens: addHydrogens,
+            current_view: currentView,
+            theory_level: theoryLevel
         }
 
         request("/ajax/submitquantum", sdf_data, function (data)
