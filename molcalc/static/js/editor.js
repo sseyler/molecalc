@@ -211,7 +211,7 @@ $('.toolset .load_benzene').click(function () {
 });
 $('.toolset .load_water').click(function () {
 
-    setCurrentSDF(sdfWaterdimer);
+    setCurrentSDF(sdfWater);
     return false;
 });
 
@@ -522,4 +522,3 @@ $searchFrm.submit(function(event) {
 
 // End
 });
-

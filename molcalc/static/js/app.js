@@ -1,4 +1,3 @@
-
 // Check storage compability
 
 var storage;
@@ -170,11 +169,9 @@ $(function()
     // Prompt function
 
     /*
-
     USAGE:
     Create a new prompt for the user like following, then add header, message,
     responses etc like this;
-
         var askuser = new $.Prompt();
         askuser.setTitle('This is the title');
         askuser.setMessage('This is the body text');
@@ -184,7 +181,6 @@ $(function()
         });
         askuser.addCancelBtn();
         askuser.show();
-
     */
 
     // Create AJAX Area
@@ -354,9 +350,7 @@ function smilesToSdf(smi)
 function sdfToSmiles(sdf)
 {
     /*
-
         NOTE Seems like removeHs is added automatically
-
     */
     var mol = RDKit.Molecule.MolBlockToMol(sdf);
 
@@ -572,4 +566,3 @@ $sidebarCloseBtns.click(function(event)
 ///////////////////////////////////////////////////////////
 
 });
-
