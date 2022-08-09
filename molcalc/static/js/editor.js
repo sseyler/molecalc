@@ -214,6 +214,21 @@ $('.toolset .load_water').click(function () {
     setCurrentSDF(sdfWater);
     return false;
 });
+$('.toolset .load_carbon_dioxide').click(function () {
+
+    setCurrentSDF(sdfCarbonDioxide);
+    return false;
+});
+$('.toolset .load_ozone').click(function () {
+
+    setCurrentSDF(sdfOzone);
+    return false;
+});
+$('.toolset .load_nitrous_oxide').click(function () {
+
+    setCurrentSDF(sdfNitrousOxide);
+    return false;
+});
 
 ///////////////////////////////////////////////////////////////////////////////
 // Select theory level for quantum chemistry
