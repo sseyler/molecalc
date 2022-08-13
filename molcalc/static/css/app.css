@@ -943,18 +943,32 @@ input[type=text].accept {
 
 .mc-footer {
     grid-area: footer;
-	line-height: 50px;
+	line-height: 75px;
+	position: relative;
 
-    background:
-        url('../img/lwm2_mg.png') no-repeat right 10px center;
+    /* background: */
+        /* url('../img/lwm2_mg.png') no-repeat right 10px center; */
         /* https://www.asu.edu/ */
         /* url('../img/unibas_logo.jpg') no-repeat right 200px center; */
-    background-size: 200px;
+    /* background-size: 200px; */
 }
 .mc-footer p {
-	margin: 10px 0 0 10px;
+	margin: 10px 10px 10px 10px;
 }
 
+#mc-footer-container {
+    margin: 0 2%;
+    padding: 5px;
+    position: relative;
+}
+
+#github {
+    float: left;
+}
+
+#asulogo {
+    float: right;
+}
 
 
 /* sections */
