@@ -31,71 +31,71 @@
 
     <section class="mc-content calculation">
 
-        <h1>{{name}}</h1>
+      <h1>{{name}}</h1>
 
-        <section class="calc-menu sidebar" id="calcmenu">
+      <section class="calc-menu sidebar" id="calcmenu">
 
-          <section class="sidebar-cover"></section>
-          <section class="sidebar-background btnCloseSidebar" href="#calcmenu"></section>
+        <section class="sidebar-cover"></section>
+        <section class="sidebar-background btnCloseSidebar" href="#calcmenu"></section>
 
-          <section class="sidebar-wrapper"> <!-- sidebar wrapper -->
+        <section class="sidebar-wrapper"> <!-- sidebar wrapper -->
 
-          <section class="toolset toggle700">
-              <a class="button icon btnCloseSidebar" href="#calcmenu">
-                  <i class="fas fa-times"></i>
-              </a>
-              <a class="button btnSidebar menu" href="#nav">Menu</a>
-          </section>
-
-          <ul>
-              <li><a href="#/energies"  class="energies active">Free Energies</a></li>
-              <li><a href="#/vibrations" class="vibrations">Vibrational Frequencies</a></li>
-              <li><a href="#/orbitals" class="orbitals">Molecular Orbitals</a></li>
-              <li><a href="#/solvation" class="solvation">Polarity and Solvation</a></li>
-          </ul>
-
-          </section> <!-- sidebar wrapper -->
+        <section class="toolset toggle700">
+            <a class="button icon btnCloseSidebar" href="#calcmenu">
+                <i class="fas fa-times"></i>
+            </a>
+            <a class="button btnSidebar menu" href="#nav">Menu</a>
         </section>
 
-        <section class="calc calc-energies active tab-energies onecol">
+        <ul>
+            <li><a href="#/energies"  class="energies active">Free Energies</a></li>
+            <li><a href="#/vibrations" class="vibrations">Vibrational Frequencies</a></li>
+            <li><a href="#/orbitals" class="orbitals">Molecular Orbitals</a></li>
+            <li><a href="#/solvation" class="solvation">Polarity and Solvation</a></li>
+        </ul>
 
-          <h2>Thermodynamics</h2>
-            <!-- <h3>at 298.15 K and standard pressure</h3> -->
+        </section> <!-- sidebar wrapper -->
+      </section>
 
-          {% include 'section_calcview_thermo.html' %}
+      <section class="calc calc-energies active tab-energies onecol">
 
-        </section>
+        <h2>Thermodynamics</h2>
+          <!-- <h3>at 298.15 K and standard pressure</h3> -->
 
-        <section class="calc calc-sdf">
-          <pre>{{sdf}}</pre>
-        </section>
+        {% include 'section_calcview_thermo.html' %}
 
+      </section>
 
-        <section class="calc calc-vibration tab-vibrations">
-
-          <h2>Vibrational Frequencies</h2>
-
-          {% include 'section_calcview_vibrations.html' %}
-
-        </section>
-
-
-        <section class="calc calc-orbitals tab-orbitals">
-
-          <h2>Molecular Orbitals</h2>
-
-          {% include 'section_calcview_orbitals.html' %}
-
-        </section>
+      <section class="calc calc-sdf">
+        <pre>{{sdf}}</pre>
+      </section>
 
 
-        <section class="calc calc-orbitals tab-solvation">
+      <section class="calc calc-vibration tab-vibrations">
 
-          <h2>Polarity and Solvations</h2>
+        <h2>Vibrational Frequencies</h2>
 
-          {% include 'section_calcview_solvation.html' %}
+        {% include 'section_calcview_vibrations.html' %}
 
-        </section>
+      </section>
+
+
+      <section class="calc calc-orbitals tab-orbitals">
+
+        <h2>Molecular Orbitals</h2>
+
+        {% include 'section_calcview_orbitals.html' %}
+
+      </section>
+
+
+      <section class="calc calc-orbitals tab-solvation">
+
+        <h2>Polarity and Solvations</h2>
+
+        {% include 'section_calcview_solvation.html' %}
+
+      </section>
 
     </section>
 
