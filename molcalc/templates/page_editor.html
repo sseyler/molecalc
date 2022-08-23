@@ -159,7 +159,7 @@ $$$$
 
     <section class="mc-editor-searchbar">
         <form>
-        <input type="text" placeholder="Search using molecule name or SMILES" autocomplete="off" id="searchbar" />
+        <input type="text" placeholder="Search using molecule name or SMILES definition" autocomplete="off" id="searchbar" />
         <a class="button icon">
             <i class="fas fa-search"></i>
         </a>
@@ -191,6 +191,7 @@ $$$$
 <!--                    <li><a href="#" rel="2d" class="button icon 3d">2D</a></li>-->
 <!--                </ul>-->
 <!--            </section>-->
+        <h1>Molecule Builder</h1>
 
         <section class="toolset jsmol">
             {% include 'jsmol_toolbar.html' %}
@@ -203,9 +204,10 @@ $$$$
 
         </section> <!-- sidebar wrapper -->
 
+        <h1>Electronic structure calculation</h1>
 
         <section class="toolset quantum">
-            <h2>Electronic structure calculation</h2>
+            <h2>Theory level</h2>
 
     <!-- <h2 class="toggle&#45;desktop">Calculate properties</h2> -->
             <ul>
@@ -216,10 +218,12 @@ $$$$
 <!--                    <li><a rel="pm6" href="#" class="button theory">PM6</a></li>-->
                 <li><a rel="am1" href="#" class="button theory">AM1</a></li>
             </ul>
+
+            <h2>Submit</h2>
             <ul class="bottombar">
 
                 <li><a href="#" class="button quantum highlight">Calculate Properties</a></li>
-                <li><a href="#" class="button getName">Get name</a></li>
+                <li><a href="#" class="button getName highlight">Get Molecule Name</a></li>
             </ul>
         </section>
 
