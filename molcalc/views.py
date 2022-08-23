@@ -263,7 +263,7 @@ def ajax_submitquantum(request):
 
     # TODO Check lengths of atoms
     # TODO Define max in settings
-    max_atoms = 10
+    max_atoms = 25
     (heavy_atoms,) = np.where(atoms != 1)
     if len(heavy_atoms) > max_atoms:
         return {
