@@ -198,7 +198,7 @@ def ajax_submitquantum(request):
     ):
         return {
             "error": "Error 194 - blocked ip",
-            "message": "IP address has been blocked for missue",
+            "message": "IP address has been blocked for misuse",
         }
 
     if not request.POST:
