@@ -15,7 +15,7 @@ Hosted at molecalc.cloud_.
 
 .. _molcalc.org: http://molcalc.org
 
-.. |screenshot| image:: https://raw.githubusercontent.com/jensengroup/molcalc/master/screenshot.jpg
+.. |screenshot| image:: https://raw.githubusercontent.com/mscloudlab/molecalc/chm343-beta/molecalc_v1.jpg
 
 Installation
 ------------
