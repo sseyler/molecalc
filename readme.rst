@@ -1,29 +1,26 @@
 
-MolCalc - The Molecule Calculator
+MoleCalc - The Molecule Calculator
 =================================
 
 |screenshot|
 
-Important! Currently version 2.0 is *under construction*. Version 1.3 is still hosted
-at molcalc.org_ and source is available at `github.com/jensengroup/molcalc-1.3`__.
+Important! Molecalc, which is based on molcalc.org_, is *under development*!
 
 The molecule calculator is a small web-based interface for doing small-scale
 quantum chemistry calculation with the intent of giving chemical intuition to
 students, from high-school to university.
-Hosted at molcalc.org_.
+Hosted at molecalc.cloud_.
+
+.. _molecalc.cloud: https://_molecalc.cloud
 
 .. _molcalc.org: http://molcalc.org
-
-.. _github_molcalc13: https://github.com/jensengroup/molcalc-1.3
-
-__ github_molcalc13_
 
 .. |screenshot| image:: https://raw.githubusercontent.com/jensengroup/molcalc/master/screenshot.jpg
 
 Installation
 ------------
 
-MolCalc is a Python based web-service, so dependencies includes
+MoleCalc is a Python based web-service, so dependencies includes
 python-packages, javascript-modules and a backend quantum chemistry program (for now it will be GAMESS).
 
 To setup the Python environment please use Anaconda_, because we use RDKit in the background.
@@ -36,14 +33,14 @@ To setup the Python environment please use Anaconda_, because we use RDKit in th
    wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda3.sh
    bash miniconda3.sh -b -p /opt/miniconda3
 
-with the Python environment we can setup MolCalc. Note that most of the steps are inserted into the `Makefile`.
+with the Python environment we can setup MoleCalc. Note that most of the steps are inserted into the `Makefile`.
 
 1. Clone down the repository
 
 .. code-block:: bash
 
-    git clone https://github.com/jensengroup/molcalc --depth 1
-    cd molcalc
+    git clone https://github.com/mscloudlab/molecalc --depth 1
+    cd molecalc
 
 
 2. Create the Python environment using `conda` and `pip`.
@@ -54,7 +51,7 @@ with the Python environment we can setup MolCalc. Note that most of the steps ar
     conda env create -f environment.yml -p env
     pip install -r requirements.txt
     git clone https://github.com/ppqm/ppqm ppqm.git --depth 1
-    ln -s ppqm/ppqm ppqm
+    ln -s ppqm.git/ppqm ppqm
 
 3. Download the JavaScript and frontend libraries, using the scripts.
    You need `unzip` and `wget` installed.
@@ -100,7 +97,7 @@ with the Python environment we can setup MolCalc. Note that most of the steps ar
     env/bin/pserve development.ini --reload
 
 
-And molcalc should now be available on ``localhost:6543``, based on the settings of development.ini.
+And molecalc should now be available on ``localhost:6543``, based on the settings of development.ini.
 
 
 Dependencies
@@ -113,22 +110,6 @@ jquery,
 chemdoodle,
 jsmol,
 gamess
-
-
-Setup on Apache server
-----------------------
-
-Easy config is just to host the service on port and use ProxyPass, for example for port `6543`.
-
-.. code-block::
-
-   <VirtualHost *:80>
-         ServerName hostname.com
-         ProxyPreserveHost On
-         ProxyPass / http://127.0.0.1:6543/
-         ProxyPassReverse / http://127.0.0.1:6543/
-   </VirtualHost>
-
 
 
 TODO
