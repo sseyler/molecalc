@@ -6,7 +6,7 @@ import ppqm
 
 _logger = logging.getLogger("molcalc:calc")
 
-MAX_TIME = 10  # seconds
+MAX_TIME = 20  # seconds
 
 
 def optimize_coordinates(molobj, gamess_options):
@@ -14,7 +14,7 @@ def optimize_coordinates(molobj, gamess_options):
     calculation_options = {
         "basis": {"gbasis": theory_level},
         "contrl": {"runtyp": "optimize"},
-        "statpt": {"opttol": 0.0005, "nstep": 300, "projct": False},
+        "statpt": {"opttol": 0.0005, "nstep": 500, "projct": False},
     }
 
     gamess_options.get("filename", None)
