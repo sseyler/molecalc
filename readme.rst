@@ -2,28 +2,55 @@
 MoleCalc - The Molecule Calculator
 =================================
 
+MoleCalc is now publically available at molecalc.cloud_!
+
+MoleCalc is based on the MolCalc project (`https://github.com/jensengroup/molcalc`_), a web-based
+chemistry teaching tool available at molcalc.org_ that was originally built by the Jensen Group at
+the University of Copenhagen. MoleCalc is a separate development project currently led by Dr. Sean L.
+Seyler and Prof. Jeffery Yarger in the
+Yarger Research Group at the School of Molecular Sciences at Arizon State University. MoleCalc allows
+chemists to build small molecules and estimate key molecular properties using research-grade quantum
+chemistry software. Currently, MoleCalc can provide, in a matter of minutes or seconds, a decent sense
+of the physical and chemical properties of a chosen molecule, such as
+
+* energy-minimized molecular structure
+* electronic structure and molecular orbitals
+* thermochemical properties of the molecular gas form
+* vibrational modes and their frequencies
+
+
 |screenshot|
 
-Important! Molecalc, which is based on molcalc.org_, is *under development*!
+**Important**: MoleCalc,  is heavily based on the original molcalc.org_ project
+, is *under active development*! This
+ReadMe is also not guaranteed to reflect the most recent state of the project,
+so please be patient!
 
-The molecule calculator is a small web-based interface for doing small-scale
-quantum chemistry calculation with the intent of giving chemical intuition to
+MoleCalc is a small web-based interface for doing small-scale
+quantum chemistry calculation with the intent of giving chemical and physical intuition to
 students, from high-school to university.
-Hosted at molecalc.cloud_.
 
-.. _molecalc.cloud: https://_molecalc.cloud
+.. _molecalc.cloud: https://molecalc.cloud
 
 .. _molcalc.org: http://molcalc.org
 
+.. _`https://github.com/jensengroup/molcalc`: https://github.com/jensengroup/molcalc
+
 .. |screenshot| image:: https://raw.githubusercontent.com/mscloudlab/molecalc/chm343-beta/molecalc_v1.jpg
+
 
 Installation
 ------------
 
-MoleCalc is a Python based web-service, so dependencies includes
-python-packages, javascript-modules and a backend quantum chemistry program (for now it will be GAMESS).
+MoleCalc is a Python based web-service, so dependencies include
+python packages, javascript modules and at least one backend quantum chemistry program
+(currently GAMESS_, with plans to incorporate new capabilities using Orca_).
 
 To setup the Python environment please use Anaconda_, because we use RDKit in the background.
+
+.. _GAMESS: https://www.msg.chem.iastate.edu/gamess/
+
+.. _Orca: https://www.faccts.de/orca/
 
 .. _Anaconda: https://www.anaconda.com/download
 
@@ -96,8 +123,7 @@ with the Python environment we can setup MoleCalc. Note that most of the steps a
     # make serve
     env/bin/pserve development.ini --reload
 
-
-And molecalc should now be available on ``localhost:6543``, based on the settings of development.ini.
+MoleCalc should now be available on ``localhost:6543``, based on the settings of development.ini.
 
 
 Dependencies
