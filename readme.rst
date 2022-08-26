@@ -6,9 +6,9 @@ MoleCalc is now publically available at molecalc.cloud_!
 
 MoleCalc is based on the MolCalc project (`https://github.com/jensengroup/molcalc`_), a web-based
 chemistry teaching tool available at molcalc.org_ that was originally built by the Jensen Group at
-the University of Copenhagen. MoleCalc is a separate development project currently led by Dr. Sean L.
-Seyler and Prof. Jeffery Yarger in the
-Yarger Research Group at the School of Molecular Sciences at Arizon State University. MoleCalc allows
+the University of Copenhagen. MoleCalc is a separate project currently being developed by Dr. Sean L.
+Seyler and led by Prof. Jeffery Yarger in the
+Yarger Research Group at the School of Molecular Sciences at Arizona State University. MoleCalc allows
 chemists to build small molecules and estimate key molecular properties using research-grade quantum
 chemistry software. Currently, MoleCalc can provide, in a matter of minutes or seconds, a decent sense
 of the physical and chemical properties of a chosen molecule, such as
