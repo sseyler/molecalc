@@ -84,7 +84,7 @@ with the Python environment we can setup MoleCalc. Note that most of the steps a
 .. code-block:: bash
 
     pip install -e .
-    git clone https://github.com/ppqm/ppqm ppqm.git --depth 1
+    git clone --branch main git@github.com:mscloudlab/ppqm.git ppqm.git
     ln -s ppqm.git/ppqm ppqm
 
 4. Download the JavaScript and frontend libraries, using the scripts.
