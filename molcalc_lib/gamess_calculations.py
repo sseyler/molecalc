@@ -29,10 +29,23 @@ def optimize_coordinates(molobj, gamess_options):
 
 def calculate_vibrations(molobj, gamess_options):
     theory_level = gamess_options.pop('theory_level', 'pm3')
-    calculation_options = {
-        "basis": {"gbasis": theory_level},
-        "contrl": {"runtyp": "hessian", "maxit": 60},
-    }
+    n_atoms = len( ppqm.chembridge.molobj_to_atoms(molobj) )
+    if n_atoms == 1:
+        calculation_options = {
+            "contrl": {
+                "runtyp": "hessian",
+                "coord": "cart",
+                "units": "angs",
+                "scftyp": "rhf",
+                "maxit": 10,
+            },
+            "basis": {"gbasis": "sto", "ngauss": 3},
+        }
+    else:
+        calculation_options = {
+            "basis": {"gbasis": theory_level},
+            "contrl": {"runtyp": "hessian", "maxit": 60},
+        }
 
     calc_obj = ppqm.gamess.GamessCalculator(**gamess_options)
     results = calc_obj.calculate(molobj, calculation_options)
@@ -42,6 +55,8 @@ def calculate_vibrations(molobj, gamess_options):
 
 
 def calculate_orbitals(molobj, gamess_options):
+    #TODO Fix theory_level placeholder here
+    theory_level = gamess_options.pop('theory_level', 'pm3')
 
     calculation_options = {
         "contrl": {
