@@ -101,7 +101,7 @@ def calculation_pipeline(molinfo, settings):
             "message": "Error. Unable to optimize molecule",
         }, None
 
-    _logger.info(f"{hashkey} OptimizationSucces")
+    _logger.info(f"{hashkey} OptimizationSuccess")
 
     # Save and set coordinates
     coord = properties[ppqm.constants.COLUMN_COORDINATES]
