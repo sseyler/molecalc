@@ -93,10 +93,10 @@ with the Python environment we can setup MoleCalc. Note that most of the steps a
     bash scripts/setup_jquery.sh
     bash scripts/setup_rdkit.sh
 
-4. Setup GAMESS_. You need to download and `compile GAMESS`__.
+4. Set up GAMESS. You need to download_ and `compile GAMESS`__.
 
 
-.. _GAMESS: https://www.msg.chem.iastate.edu/gamess/download.html
+.. _download: https://www.msg.chem.iastate.edu/gamess/download.html
 .. __: http://computerandchemistry.blogspot.com/2014/02/compiling-and-setting-up-gamess.html
 
 5. Setup configuration by copying the example and edit.
