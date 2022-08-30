@@ -438,8 +438,8 @@ table tr td.center {text-align:center;}
 
 .button.highlight {
     color:#fff;
-    background: #444;
-    border-color: #444;
+    background: #333;
+    border-color: #333;
 }
 .button.highlight:hover {
     color:#fff;

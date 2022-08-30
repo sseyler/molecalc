@@ -118,32 +118,32 @@ def ajax_sdf_to_smiles(request):
     """
     return {"message", "disabled"}
 
-    if not request.POST:
-        return {
-            "error": "Error 55 - Missing key",
-            "message": "Error. Missing information.",
-        }
-
-    try:
-        sdf = request.POST["sdf"].encode("utf-8")
-    except Exception:
-        return {
-            "error": "Error 60 - get error",
-            "message": "Error. Missing information.",
-        }
-
-    # Get smiles
-    smiles, status = chembridge.sdf_to_smiles(sdf)
-    if smiles is None:
-
-        status = status.split("]")
-        status = status[-1]
-
-        return {"error": "Error 69 - rdkit error", "message": status}
-
-    msg = {"smiles": smiles}
-
-    return msg
+    # if not request.POST:
+    #     return {
+    #         "error": "Error 55 - Missing key",
+    #         "message": "Error. Missing information.",
+    #     }
+    #
+    # try:
+    #     sdf = request.POST["sdf"].encode("utf-8")
+    # except Exception:
+    #     return {
+    #         "error": "Error 60 - get error",
+    #         "message": "Error. Missing information.",
+    #     }
+    #
+    # # Get smiles
+    # smiles, status = chembridge.sdf_to_smiles(sdf)
+    # if smiles is None:
+    #
+    #     status = status.split("]")
+    #     status = status[-1]
+    #
+    #     return {"error": "Error 69 - rdkit error", "message": status}
+    #
+    # msg = {"smiles": smiles}
+    #
+    # return msg
 
 
 # Ajax views
@@ -159,25 +159,25 @@ def ajax_smiles_to_sdf(request):
 
     return {"message", "disabled"}
 
-    if not request.POST:
-        return {
-            "error": "Error 53 - Missing key",
-            "message": "Error. Missing information.",
-        }
-
-    try:
-        smiles = request.POST["smiles"].encode("utf-8")
-    except Exception as e:
-        return {
-            "error": "Error 58 - get error",
-            "message": "Error. Missing information.",
-            "exception": f"{e}",
-        }
-
-    sdfstr = chembridge.smiles_to_sdfstr(smiles)
-    msg = {"sdf": sdfstr}
-
-    return msg
+    # if not request.POST:
+    #     return {
+    #         "error": "Error 53 - Missing key",
+    #         "message": "Error. Missing information.",
+    #     }
+    #
+    # try:
+    #     smiles = request.POST["smiles"].encode("utf-8")
+    # except Exception as e:
+    #     return {
+    #         "error": "Error 58 - get error",
+    #         "message": "Error. Missing information.",
+    #         "exception": f"{e}",
+    #     }
+    #
+    # sdfstr = chembridge.smiles_to_sdfstr(smiles)
+    # msg = {"sdf": sdfstr}
+    #
+    # return msg
 
 
 @view_config(route_name="submitquantum", renderer="json")
