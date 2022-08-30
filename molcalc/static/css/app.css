@@ -1106,6 +1106,9 @@ input[type=text].accept {
     border-radius: 4px;
 }
 
+.mc-editor-tools {
+	margin: 0 0 0 10px;
+}
 
 .mc-editor-tools h1 {
     font-size: 125%;
