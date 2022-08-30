@@ -320,7 +320,7 @@ def ajax_submitquantum(request):
 
         return {
             "error": "293",
-            "message": "Internal server server. Uncaught exception",
+            "message": "Internal server error. Uncaught exception",
         }
 
     # Add calculation to the database
