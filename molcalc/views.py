@@ -281,6 +281,7 @@ def ajax_submitquantum(request):
     # Inject numerical calculation parameters (e.g., "theory_level") in
     # the generated hashkey so the existence of a calculation depends not only
     # only on the input structure but also the selected numerical inputs
+    # TODO CHECK THIS, SEAN --- this is probably causing that error with N#N
     calc_str = f'{sdfstr}\n{theory_level}'
 
     # hash on sdf (conformer)
