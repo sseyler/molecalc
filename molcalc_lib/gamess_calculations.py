@@ -6,7 +6,7 @@ import ppqm
 
 _logger = logging.getLogger("molcalc:calc")
 
-MAX_TIME = 20  # seconds
+MAX_TIME = 30  # seconds
 
 
 def optimize_coordinates(molobj, gamess_options):

@@ -263,12 +263,12 @@ def ajax_submitquantum(request):
 
     # TODO Check lengths of atoms
     # TODO Define max in settings
-    max_atoms = 25
+    max_atoms = 50
     (heavy_atoms,) = np.where(atoms != 1)
     if len(heavy_atoms) > max_atoms:
         return {
             "error": "Error 194 - max atoms error",
-            "message": "Stop Casper. Max ten heavy atoms.",
+            "message": f"Stop Casper. Max {max_atoms} heavy atoms.",
         }
 
     # Fix sdfstr
