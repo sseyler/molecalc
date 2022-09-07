@@ -113,7 +113,7 @@ def page_help(request):
 def ajax_sdf_to_smiles(request):
     """
 
-    sdf to smiles convertion
+    sdf to smiles conversion
 
     """
     return {"message", "disabled"}
