@@ -485,6 +485,27 @@ table tr td.center {text-align:center;}
 
 }
 
+
+/*a[download] {
+  color: hsla(216, 70%, 53%, 1);
+  text-decoration: underline;
+}*/
+
+a[download]::before {
+  content: url('../static/img/benzene_v1_5.png');
+  height: 1em;
+  position: relative;
+  top: 0.75em;
+  right: 0.5em;
+  width: 1em;
+}
+
+a[download]:hover,
+a[download]:focus {
+  text-decoration: none;
+}
+
+
 /* loading meter */
 /* https://css-tricks.com/css3-progress-bars/ */
 
