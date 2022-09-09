@@ -438,8 +438,8 @@ table tr td.center {text-align:center;}
 
 .button.highlight {
     color:#fff;
-    background: #222;
-    border-color: #222;
+    background: #333;
+    border-color: #333;
 }
 .button.highlight:hover {
     color:#fff;
@@ -1127,6 +1127,10 @@ input[type=text].accept {
     border-radius: 4px;
 }
 
+.mc-editor-tools {
+	margin: 0 0 0 10px;
+}
+
 .mc-editor-tools h1 {
     font-size: 125%;
 	font-weight: bold;
@@ -1140,7 +1144,7 @@ input[type=text].accept {
 	margin: 10px;
 }
 .mc-editor-tools .toolset h2 {
-	margin: 0 0 10px 0;
+	margin:0 0 10px 0;
 }
 .mc-editor-tools .toolset h3 {
 	margin:0 0 20px 0;

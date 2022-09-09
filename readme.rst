@@ -1,32 +1,56 @@
 
-MolCalc - The Molecule Calculator
+MoleCalc - The Molecule Calculator
 =================================
+
+MoleCalc is now publically available at molecalc.cloud_!
+
+MoleCalc is based on the MolCalc project (`https://github.com/jensengroup/molcalc`_), a web-based
+chemistry teaching tool available at molcalc.org_ that was originally built by the Jensen Group at
+the University of Copenhagen. MoleCalc is a separate project currently being developed by Dr. Sean L.
+Seyler and led by Prof. Jeffery Yarger in the
+Yarger Research Group at the School of Molecular Sciences at Arizona State University. MoleCalc allows
+chemists to build small molecules and estimate key molecular properties using research-grade quantum
+chemistry software. Currently, MoleCalc can provide, in a matter of minutes or seconds, a decent sense
+of the physical and chemical properties of a chosen molecule, such as
+
+* energy-minimized molecular structure
+* electronic structure and molecular orbitals
+* thermochemical properties of the molecular gas form
+* vibrational modes and their frequencies
+
 
 |screenshot|
 
-Important! Currently version 2.0 is *under construction*. Version 1.3 is still hosted
-at molcalc.org_ and source is available at `github.com/jensengroup/molcalc-1.3`__.
+**Important**: MoleCalc,  is heavily based on the original molcalc.org_ project
+, is *under active development*! This
+ReadMe is also not guaranteed to reflect the most recent state of the project,
+so please be patient!
 
-The molecule calculator is a small web-based interface for doing small-scale
-quantum chemistry calculation with the intent of giving chemical intuition to
+MoleCalc is a small web-based interface for doing small-scale
+quantum chemistry calculation with the intent of giving chemical and physical intuition to
 students, from high-school to university.
-Hosted at molcalc.org_.
+
+.. _molecalc.cloud: https://molecalc.cloud
 
 .. _molcalc.org: http://molcalc.org
 
-.. _github_molcalc13: https://github.com/jensengroup/molcalc-1.3
+.. _`https://github.com/jensengroup/molcalc`: https://github.com/jensengroup/molcalc
 
-__ github_molcalc13_
+.. |screenshot| image:: https://raw.githubusercontent.com/mscloudlab/molecalc/chm343-beta/molecalc_v1.jpg
 
-.. |screenshot| image:: https://raw.githubusercontent.com/jensengroup/molcalc/master/screenshot.jpg
 
 Installation
 ------------
 
-MolCalc is a Python based web-service, so dependencies includes
-python-packages, javascript-modules and a backend quantum chemistry program (for now it will be GAMESS).
+MoleCalc is a Python based web-service, so dependencies include
+python packages, javascript modules and at least one backend quantum chemistry program
+(currently GAMESS_, with plans to incorporate new capabilities using Orca_).
 
 To setup the Python environment please use Anaconda_, because we use RDKit in the background.
+
+.. _GAMESS: https://www.msg.chem.iastate.edu/gamess/
+
+.. _Orca: https://www.faccts.de/orca/
 
 .. _Anaconda: https://www.anaconda.com/download
 
@@ -36,27 +60,36 @@ To setup the Python environment please use Anaconda_, because we use RDKit in th
    wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda3.sh
    bash miniconda3.sh -b -p /opt/miniconda3
 
-with the Python environment we can setup MolCalc. Note that most of the steps are inserted into the `Makefile`.
+with the Python environment we can setup MoleCalc. Note that most of the steps are inserted into the `Makefile`.
 
 1. Clone down the repository
 
 .. code-block:: bash
 
-    git clone https://github.com/jensengroup/molcalc --depth 1
-    cd molcalc
+    git clone https://github.com/mscloudlab/molecalc --depth 1
+    cd molecalc
 
 
-2. Create the Python environment using `conda` and `pip`.
+2. Create the Python environment using `conda` and `pip` and the provided
+   `environment.yml` and `requirements.txt` files.
 
 .. code-block:: bash
 
     # make env chemhelp
     conda env create -f environment.yml -p env
     pip install -r requirements.txt
-    git clone https://github.com/ppqm/ppqm ppqm.git --depth 1
-    ln -s ppqm/ppqm ppqm
 
-3. Download the JavaScript and frontend libraries, using the scripts.
+
+3. Install `molecalc` in `./env` and `ppqm` locally in the molecalc directory:
+
+.. code-block:: bash
+
+    pip install -e .
+    git clone --branch main git@github.com:mscloudlab/ppqm.git ppqm.git
+    ln -s ppqm.git/ppqm ppqm
+
+
+4. Download the JavaScript and frontend libraries, using the scripts.
    You need `unzip` and `wget` installed.
    All JavaScript libraries will be installed in the `molcalc/static` folder.
 
@@ -69,14 +102,21 @@ with the Python environment we can setup MolCalc. Note that most of the steps ar
     bash scripts/setup_jquery.sh
     bash scripts/setup_rdkit.sh
 
-4. Setup GAMESS_. You need to download and `compile GAMESS`__.
 
+5. Set up GAMESS. You need to download_ and `compile GAMESS`__.
 
-.. _GAMESS: https://www.msg.chem.iastate.edu/gamess/download.html
+.. _download: https://www.msg.chem.iastate.edu/gamess/download.html
 .. __: http://computerandchemistry.blogspot.com/2014/02/compiling-and-setting-up-gamess.html
 
-5. Setup configuration by copying the example and edit.
-   Especially note to edit the GAMESS section to reflect the setup of your setup.
+
+6. Set up the PasteDeploy configuration (`*.ini` file) by copying the example
+   and editing the `[scr]` and `[gamess]` sections to reflect the corresponding
+   (`csh`) variables `SCR`, `USERSCR`, and `GMSPATH` specified in your `rungms`
+   script.
+   One might opt to create a copy of `rungms` (say, `molcalc_rungms`) so as to
+   specify different scratch directories to be used when GAMESS is run by
+   MoleCalc; in this case, the `rungms` variable in the `[gamess]` section of
+   your `*.ini` file should point to this new copy (`molcalc_rungms`).
 
 .. code-block:: bash
 
@@ -84,7 +124,8 @@ with the Python environment we can setup MolCalc. Note that most of the steps ar
     # edit development.ini
 
 
-6. Test. Use the unittest to check that the configuration for GAMESS is setup correctly
+7. Test using `pytest` to check that the configuration for GAMESS is set up
+   correctly
 
 .. code-block:: bash
 
@@ -92,7 +133,7 @@ with the Python environment we can setup MolCalc. Note that most of the steps ar
     python -m pytest tests
 
 
-7. You are ready. Serve the server by
+8. MoleCalc should be ready. Serve the server by
 
 .. code-block:: bash
 
@@ -100,7 +141,9 @@ with the Python environment we can setup MolCalc. Note that most of the steps ar
     env/bin/pserve development.ini --reload
 
 
-And molcalc should now be available on ``localhost:6543``, based on the settings of development.ini.
+9. In your favorite browser, type ``localhost:6543`` (or whatever
+   corresponding ip/port was specified in `development.ini`) in the URL bar
+   and have fun!
 
 
 Dependencies
@@ -113,22 +156,6 @@ jquery,
 chemdoodle,
 jsmol,
 gamess
-
-
-Setup on Apache server
-----------------------
-
-Easy config is just to host the service on port and use ProxyPass, for example for port `6543`.
-
-.. code-block::
-
-   <VirtualHost *:80>
-         ServerName hostname.com
-         ProxyPreserveHost On
-         ProxyPass / http://127.0.0.1:6543/
-         ProxyPassReverse / http://127.0.0.1:6543/
-   </VirtualHost>
-
 
 
 TODO
@@ -170,7 +197,7 @@ If rdkit has problems finding `libxrender.so` then you need to install
 
 .. code-block:: bash
 
-    apt install -y libxrender-dev
+    sudo apt install libxrender-dev
 
 or
 

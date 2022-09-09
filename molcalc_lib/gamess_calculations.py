@@ -6,7 +6,7 @@ import ppqm
 
 _logger = logging.getLogger("molcalc:calc")
 
-MAX_TIME = 10  # seconds
+MAX_TIME = 90  # seconds
 
 
 def optimize_coordinates(molobj, gamess_options):
@@ -14,7 +14,7 @@ def optimize_coordinates(molobj, gamess_options):
     calculation_options = {
         "basis": {"gbasis": theory_level},
         "contrl": {"runtyp": "optimize"},
-        "statpt": {"opttol": 0.0005, "nstep": 300, "projct": False},
+        "statpt": {"opttol": 0.00025, "nstep": 500, "projct": False},
     }
 
     gamess_options.get("filename", None)
@@ -29,10 +29,24 @@ def optimize_coordinates(molobj, gamess_options):
 
 def calculate_vibrations(molobj, gamess_options):
     theory_level = gamess_options.pop('theory_level', 'pm3')
-    calculation_options = {
-        "basis": {"gbasis": theory_level},
-        "contrl": {"runtyp": "hessian", "maxit": 60},
-    }
+    n_atoms = len( ppqm.chembridge.molobj_to_atoms(molobj) )
+    if n_atoms == 1:
+        calculation_options = {
+            "contrl": {
+                "runtyp": "hessian",
+                "coord": "cart",
+                "units": "angs",
+                "scftyp": "rhf",
+                "maxit": 60,
+            },
+            "basis": {"gbasis": "sto", "ngauss": 3},
+        }
+    else:
+        calculation_options = {
+            "basis": {"gbasis": theory_level},
+            "contrl": {"runtyp": "hessian", "maxit": 60},
+            "force": {"method": "seminum"},
+        }
 
     calc_obj = ppqm.gamess.GamessCalculator(**gamess_options)
     results = calc_obj.calculate(molobj, calculation_options)
@@ -42,6 +56,8 @@ def calculate_vibrations(molobj, gamess_options):
 
 
 def calculate_orbitals(molobj, gamess_options):
+    #TODO Fix theory_level placeholder here
+    theory_level = gamess_options.pop('theory_level', 'pm3')
 
     calculation_options = {
         "contrl": {
@@ -92,45 +108,54 @@ def calculate_solvation(molobj, gamess_options):
     return properties
 
 
-def calculate_all_properties(molobj, gamess_options):
+def calculate_all_properties(molobj, gamess_options, async_calc=False):
 
     funcs = [
         calculate_vibrations,
         calculate_orbitals,
-        calculate_solvation,
+        # calculate_solvation,
     ]
-
-    def procfunc(conn, func, *args, **kwargs):
-        properties = func(*args, **kwargs)
-        conn.send(properties)
-        conn.close()
-
-    procs = []
-    conns = []
 
     filename = gamess_options.get("filename", "gamess_calc")
 
-    for func in funcs:
+    if async_calc:
 
-        # Change scr
-        gamess_options = copy.deepcopy(gamess_options)
-        gamess_options["filename"] = filename + "_" + func.__name__
+        def procfunc(conn, func, *args, **kwargs):
+            properties = func(*args, **kwargs)
+            conn.send(properties)
+            conn.close()
 
-        parent_conn, child_conn = Pipe()
-        p = Process(
-            target=procfunc,
-            args=(child_conn, func, molobj, gamess_options),
-        )
-        p.start()
+        procs = []
+        conns = []
 
-        procs.append(p)
-        conns.append(parent_conn)
+        for func in funcs:
 
-    for proc in procs:
-        proc.join(timeout=MAX_TIME)
+            # Change scr
+            gamess_options = copy.deepcopy(gamess_options)
+            gamess_options["filename"] = filename + "_" + func.__name__
 
-    properties_vib = conns[0].recv()
-    properties_orb = conns[1].recv()
-    properties_sol = conns[2].recv()
+            parent_conn, child_conn = Pipe()
+            p = Process(
+                target=procfunc,
+                args=(child_conn, func, molobj, gamess_options),
+            )
+            p.start()
 
-    return properties_vib, properties_orb, properties_sol
+            procs.append(p)
+            conns.append(parent_conn)
+
+        for proc in procs:
+            proc.join(timeout=MAX_TIME)
+
+        properties = [conns[i].recv() for i in range(len(funcs))]
+
+    else:
+
+        properties = []
+        for func in funcs:
+            # Change scr
+            gamess_options = copy.deepcopy(gamess_options)
+            gamess_options["filename"] = filename + "_" + func.__name__
+            properties.append( func(molobj, gamess_options) )
+
+    return properties
