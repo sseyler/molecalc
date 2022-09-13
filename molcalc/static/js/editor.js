@@ -48,7 +48,7 @@ function getCurrentSDF(includeHydrogen=false)
     }
     else
     {
-        mol = jsmolGetMol(myJmol1, includeHydogen=includeHydrogen);
+        mol = jsmolGetMol(myJmol1, includeHydrogen=includeHydrogen);
     }
 
     return mol;
