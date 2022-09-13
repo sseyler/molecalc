@@ -46,6 +46,7 @@ coverage/
 docs/_build/
 
 # Misc
+pserve
 .python-version
 
 # Enviroment
