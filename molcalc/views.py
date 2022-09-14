@@ -230,6 +230,22 @@ def ajax_submitquantum(request):
     theory_level = request.POST.get('theory_level', 'pm3')
     _logger.info(f'Selected theory level: "{theory_level}"')
 
+    print(80*'+')
+    print(request.POST)
+    print(80*'+')
+
+    # Get IUPAC name (if available)
+    iupac_name = request.POST.get('iupac_name', 'N/A')
+    _logger.info(f'IUPAC Name: "{iupac_name}"')
+
+    # Get SMILES name (if available)
+    smiles_name = request.POST.get('smiles_name', 'N/A')
+    _logger.info(f'SMILES Name: "{smiles_name}"')
+
+    # Get "trivial" name (if available)
+    trivial_name = request.POST.get('trivial_name', 'N/A')
+    _logger.info(f'Trivial Name: "{trivial_name}"')
+
     # Get rdkit
     molobj, status = chembridge.sdfstr_to_molobj(sdfstr, return_status=True)
 

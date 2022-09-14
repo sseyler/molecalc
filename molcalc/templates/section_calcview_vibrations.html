@@ -175,6 +175,15 @@ $(function()
   </tbody>
   </table>
 
+<div>
+    <a
+      download="nice_download_name.png"
+      href="../static/img/benzene_v1_5.png"
+      class="button">
+      <i class="fa fa-download"></i>
+      Download Mode Data</a>
+</div>
+
 <ul class="data vibration_level">
 
 {% for energy in vibfreq %}
@@ -194,15 +203,13 @@ $(function()
 
 <section class="view">
 
-        <div class="editor-jsmol" style="width: 100%;height: 100%;">
-
-<script type="text/javascript">
-jmolVib = Jmol.getApplet("jmolVib", vibInfo1);
-Jmol.script(jmolVib, 'background "#ffffff"');
-Jmol.script(jmolVib, 'set bondRadiusMilliAngstroms 100; set multipleBondSpacing -0.3');
-</script>
-
-        </div>
+    <div class="editor-jsmol" style="width: 100%;height: 100%;">
+        <script type="text/javascript">
+            jmolVib = Jmol.getApplet("jmolVib", vibInfo1);
+            Jmol.script(jmolVib, 'background "#ffffff"');
+            Jmol.script(jmolVib, 'set bondRadiusMilliAngstroms 100; set multipleBondSpacing -0.3');
+        </script>
+    </div>
 
 
 </section>

@@ -1220,11 +1220,13 @@ input[type=text].accept {
     margin: 0 10px 10px 10px;
 }
 .mc-content.calculation h1 {
-    display: none;
+    /* display: none; */
     grid-area: name;
     font-size: 30px;
     line-height: 40px;
     font-weight: bold;
+    z-index: 10;
+    text-align: left;
 }
 .mc-content.calculation h2 {
     font-size: 25px;

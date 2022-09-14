@@ -48,7 +48,7 @@ function getCurrentSDF(includeHydrogen=false)
     }
     else
     {
-        mol = jsmolGetMol(myJmol1, includeHydogen=includeHydrogen);
+        mol = jsmolGetMol(myJmol1, includeHydrogen=includeHydrogen);
     }
 
     return mol;
@@ -293,18 +293,61 @@ $('.button.theory').click(function() {
 
 //-----------------------------------------------------------------------------
 
+///////////////////////////////////////////////////////////////////////////////
+// Get IUPAC name for current structure
+///////////////////////////////////////////////////////////////////////////////
+function getIUPACName() {
+    var lvl = $('.toolset.quantum .button.theory.active').attr('rel');
+    return lvl;
+}
 
 
 
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
+var IUPACName;
+function callback(response) {
+    IUPACName = response;
+}
+
+// Get name
+$('.button.getName').click(function () {
+
+    // Setup loading
+    var $loading = $('<div class="meter"><span style="width: 100%"></span></div>');
+    var promptWait = new $.Prompt();
+    promptWait.setMessage($loading);
+    promptWait.setType("transparent");
+    promptWait.show();
+
+    // prepare smiles
+    var mol = getCurrentSDF();
+    var search = sdfToSmiles(mol);
+
+    requestCactus(search, 'iupac_name', function(data) {
+            IUPACName = data.toLowerCase();
+
+            var promptCactus = new $.Prompt();
+            promptCactus.setMessage(IUPACName);
+            promptCactus.addCancelBtn("OK");
+            promptCactus.show();
+            promptWait.cancel();
+        }, function(status)
+        {
+            promptWait.cancel();
+        }
+    );
+
+    return false;
+});
+
 
 // Move to quantum
 $('.button.quantum').click(function () {
 
     var promptQuantum = new $.Prompt();
     promptQuantum.setMessage('Ready to calculate <strong>quantum chemical properties</strong> for the molecule?');
-    promptQuantum.addResponseBtn('Indeed', function()
+    promptQuantum.addResponseBtn('Let\'s Go!', function()
     {
         var $loading = $('<div class="meter"><span style="width: 100%"></span></div>');
         var promptCalculation = new $.Prompt();
@@ -320,13 +363,17 @@ $('.button.quantum').click(function () {
             addHydrogens = 0
         }
         var theoryLevel = getTheoryLevel();
+        var smiles_name = sdfToSmiles(mol);
 
         var sdf_data = {
             sdf: mol,
             add_hydrogens: addHydrogens,
             current_view: currentView,
-            theory_level: theoryLevel
-        }
+            theory_level: theoryLevel,
+            smiles_name: smiles_name,
+            iupac_name: IUPACName,
+            trivial_name: 'trivial name'
+        };
 
         request("/ajax/submitquantum", sdf_data, function (data)
         {
@@ -346,91 +393,6 @@ $('.button.quantum').click(function () {
 
     return false;
 });
-
-
-// Get name
-$('.button.getName').click(function () {
-
-    // Setup loading
-    var $loading = $('<div class="meter"><span style="width: 100%"></span></div>');
-    var promptWait = new $.Prompt();
-    promptWait.setMessage($loading);
-    promptWait.setType("transparent");
-    promptWait.show();
-
-    // prepare smiles
-    var mol = getCurrentSDF();
-    var search = sdfToSmiles(mol);
-
-    requestCactus(search, 'iupac_name', function(data)
-    {
-        name = data;
-        name = name.toLowerCase();
-
-        var promptCactus = new $.Prompt();
-        promptCactus.setMessage(name);
-        promptCactus.addCancelBtn("OK");
-        promptCactus.show();
-
-        promptWait.cancel();
-
-    }, function(status)
-    {
-        promptWait.cancel();
-    });
-
-    // var promptWait = new $.Prompt();
-    // promptWait.setMessage($loading);
-    // promptWait.show();
-    //
-    // request("/ajax/sdf", {"sdf": mol}, function (data)
-    // {
-    //     promptWait.cancel();
-    //     var promptCalculation = new $.Prompt();
-    //
-    //     if(data["error"]) {
-    //
-    //         promptCalculation.setMessage(data["message"]);
-    //
-    //     } else {
-    //
-    //         // contact cactus
-    //         promptCalculation.setMessage($loading);
-    //         promptCalculation.setType("transparent");
-    //
-    //         // prepare smiles
-    //         search = data["smiles"];
-    //
-    //         requestCactus(search, 'iupac_name', function(data)
-    //         {
-    //
-    //             name = data;
-    //             name = name.toLowerCase();
-    //
-    //             var promptCactus = new $.Prompt();
-    //             promptCactus.setMessage(name);
-    //             promptCactus.addCancelBtn("Thanks");
-    //             promptCactus.show();
-    //
-    //             promptCalculation.cancel();
-    //
-    //
-    //         }, function(status)
-    //         {
-    //             promptCalculation.cancel();
-    //         });
-    //
-    //     } // data
-    //
-    //     promptCalculation.show();
-    //
-    // }, function() {
-    //     promptWait.cancel();
-    // });
-
-    return false;
-});
-
 
 
 
