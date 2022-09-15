@@ -122,8 +122,8 @@ M  END
 $$$$
 `;
 
-
 </script>
+
 
 <script type="text/javascript" src="{{ request.static_url('molcalc:static/js/editor.js') }}">
 </script>
@@ -132,14 +132,14 @@ $$$$
 </head>
 <body>
 
-  <section class="molcalc editor" id="molcalc-view">
+<section class="molcalc editor" id="molcalc-view">
 
     {% include 'section_icon.html' %}
 
     <section class="mc-mobile-navigation toggle700 btnHeader left">
         <a class="button icon btnSidebar" href="#sidebarEditor">
-    <!-- <i class="fas fa&#45;angle&#45;right"></i> -->
-    <i class="fas fa-bars"></i>
+            <!-- <i class="fas fa&#45;angle&#45;right"></i> -->
+            <i class="fas fa-bars"></i>
         </a>
     </section>
 
@@ -157,11 +157,11 @@ $$$$
 
     <section class="mc-editor-searchbar">
         <form>
-        <input type="text" placeholder="Search using molecule name or SMILES definition" autocomplete="off" id="searchbar" />
-        <a class="button icon">
-            <i class="fas fa-search"></i>
-        </a>
-        <span class="toggle700 searchbar-close button icon">
+            <input type="text" placeholder="Search using molecule name or SMILES definition" autocomplete="off" id="searchbar" />
+            <a class="button icon">
+                <i class="fas fa-search"></i>
+            </a>
+            <span class="toggle700 searchbar-close button icon">
             <i class="fas fa-times"></i>
         </span>
         </form>
@@ -207,7 +207,7 @@ $$$$
         <section class="toolset quantum">
             <h2>Theory level</h2>
 
-    <!-- <h2 class="toggle&#45;desktop">Calculate properties</h2> -->
+            <!-- <h2 class="toggle&#45;desktop">Calculate properties</h2> -->
             <ul>
                 <!-- Note that the 'href="#"' appears to be necessary for highlighting
                  keeping the selected button highlighted
@@ -216,32 +216,28 @@ $$$$
                 <li><a rel="am1" href="#" class="button theory">AM1</a></li>
             </ul>
 
-            <h2>Submit</h2>
-            <ul class="bottombar">
+            <h2>Run GAMESS</h2>
 
+            <ul class="bottombar">
                 <li><a href="#" class="button quantum highlight">Calculate Properties</a></li>
                 <li><a
-                      download="nice_download_name.png"
-                      href="../static/img/benzene_v1_5.png"
-                      class="button">
-                      <i class="fa fa-download"></i>
-                      Download Inputs</a>
+                        download="nice_download_name.png"
+                        href="../static/img/benzene_v1_5.png"
+                        class="button">
+                    <i class="fa fa-download"></i>
+                    Download Inputs</a>
                 </li>
             </ul>
         </section>
-
-
 
 
     </section>
 
     <section class="mc-content">
 
-
-<!--            <div id="editor-chemdoodle">-->
-<!--                {% include 'chemtools_content.html' %}-->
-<!--            </div>-->
-
+        <!--            <div id="editor-chemdoodle">-->
+        <!--                {% include 'chemtools_content.html' %}-->
+        <!--            </div>-->
 
         <div id="editor-jsmol">
             {% include 'jsmol_content.html' %}
@@ -249,12 +245,11 @@ $$$$
 
     </section>
 
+</section>
 
-  </section>
+<section class="hidden">
 
-	<section class="hidden">
-
-	</section>
+</section>
 
 </body>
 </html>
