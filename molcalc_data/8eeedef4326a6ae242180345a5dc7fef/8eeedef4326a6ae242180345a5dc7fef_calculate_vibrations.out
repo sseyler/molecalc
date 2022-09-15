@@ -1,0 +1,2631 @@
+1 : 8eeedef4326a6ae242180345a5dc7fef_calculate_vibrations.inp
+----- GAMESS execution script 'rungms' -----
+This job is running on host seylerjupiter
+under operating system Linux at Thu 15 Sep 2022 09:32:54 AM MST
+Available scratch disk space (Kbyte units) at beginning of the job is
+Filesystem      1K-blocks      Used Available Use% Mounted on
+/dev/nvme2n1p1 1921724608 931282828 892749724  52% /home
+GAMESS temporary binary files will be written to /home/sseyler/scratch/gamess/restart
+GAMESS supplementary output files will be written to /home/sseyler/scratch/gamess/restart
+Copying input file ./8eeedef4326a6ae242180345a5dc7fef_calculate_vibrations.inp to your run's scratch directory...
+
+ Distributed Data Interface kickoff program.
+ Initiating 1 compute processes on 1 nodes to run the following command:
+ /home/sseyler/Library/GAMESS/gamess-intel-mkl/gamess.00.x 8eeedef4326a6ae242180345a5dc7fef_calculate_vibrations 
+
+          *******************************************************
+          *                                                     *
+          *      GAMESS VERSION = 30 SEP 2021 (R2 Patch 2)      *
+          *                                                     *
+          *              doi.org/10.1063/5.0005188              *
+          *                                                     *
+          **************** 64 BIT INTEL VERSION *****************
+
+  GAMESS HAS BEEN MADE POSSIBLE WITH IMPORTANT CONTRIBUTIONS FROM
+  THE FOLLOWING INDIVIDUALS (IN ALPHABETICAL ORDER):
+
+     IVANA ADAMOVIC, CHRISTINE AIKENS, TOMOKO AKAMA,
+     MELISA ALKAN, YURI ALEXEEV, YURIKO AOKI, POOJA ARORA,
+     TOSHIO ASADA, ANDREY ASADCHEV, KIM K. BALDRIDGE,
+     PRADIPTA BANDYOPADHYAY, TAYLOR A. BARNES, MARIA BARYSZ,
+     ROB BELL, JONATHAN BENTZ, COLLEEN BERTONI,
+     JERRY A. BOATZ, BRETT BODE, KURT BRORSEN, KURT R. BRORSEN,
+     LAIMUTIS BYTAUTAS, CALEB CARLIN, LAURA CARRINGTON,
+     GALINA CHABAN, BENOIT CHAMPAGNE, WEI CHEN, MAHITO CHIBA,
+     DAN CHIPMAN, CHEOL HO CHOI, TANNER CULPITT,
+     DIPAYAN DATTA, PAUL DAY, ALBERT DEFUSCO,
+     NUWAN DESILVA, J. EMILIANO DEUSTUA,
+     TIM DUDLEY, MICHEL DUPUIS, STEVEN T. ELBERT,
+     DMITRI FEDOROV, ALEX FINDLATER, GRAHAM FLETCHER,
+     MARK FREITAG, CHRISTIAN FRIEDL, DAVID GARMER,
+     IGOR S. GERASIMOV, KURT GLAESEMANN, MARK S. GORDON,
+     JEFFREY GOUR, FENG LONG GU, EMILIE B. GUIDEZ,
+     ANASTASIA GUNINA, SHARON HAMMES-SCHIFFER, MASATAKE HARUTA,
+     KIMIHIKO HIRAO, YASUHIRO IKABATA, TZVETELIN IORDANOV,
+     STEPHAN IRLE, KAZUYA ISHIMURA, JOE IVANIC, FRANK JENSEN,
+     JAN H. JENSEN, VISVALDAS KAIRYS, MUNEAKI KAMIYA,
+     MICHIO KATOUDA, NAOAKI KAWAKAMI, DAN KEMP, BERNARD KIRTMAN,
+     KAZUO KITAURA, MARIUSZ KLOBUKOWSKI, MASATO KOBAYASHI,
+     PRAKASHAN KORAMBATH, JACEK KORCHOWIEC, SHIRO KOSEKI,
+     KAROL KOWALSKI, JIMMY KROMANN, STANISLAW KUCHARSKI,
+     HENRY KURTZ, SAROM SOK LEANG, HUI LI, SHUHUA LI, WEI LI,
+     JESSE LUTZ, ALEKSANDR O. LYKHIN, MARCIN MAKOWSKI,
+     JOANI MATO, NIKITA MATSUNAGA, BENEDETTA MENNUCCI,
+     GRANT MERRILL, NORIYUKI MINEZAWA, VLADIMIR MIRONOV,
+     EISAKU MIYOSHI, JOHN A. MONTGOMERY JR., HIROTOSHI MORI,
+     JONATHAN MULLIN, MONIKA MUSIAL, SHIGERU NAGASE,
+     TAKESHI NAGATA, HIROMI NAKAI, TAKAHITO NAKAJIMA,
+     YUYA NAKAJIMA, HARUYUKI NAKANO, HIROYA NAKATA, SEAN NEDD,
+     HEATHER NETZLOFF, KIET A. NGUYEN, YOSHIO NISHIMOTO,
+     BOSILJKA NJEGIC, RYAN OLSON, MIKE PAK, ROBERTO PEVERATI,
+     BUU PHAM, PIOTR PIECUCH, ANNA POMOGAEVA, DAVID POOLE,
+     SPENCER PRUITT, OLIVIER QUINET, LUKE ROSKOP,
+     KLAUS RUEDENBERG, ANDREW SAND, TOSAPORN SATTASATHUCHANA,
+     NOZOMI SAWADA, MICHAEL W. SCHMIDT, PATRICK E. SCHNEIDER,
+     JUNJI SEINO, PRACHI SHARMA, JUN SHEN, JIM SHOEMAKER,
+     YINAN SHU, DEJUN SI, JONATHAN SKONE, LYUDMILA SLIPCHENKO,
+     TONY SMITH, JIE SONG, MARK SPACKMAN, CASPER STEINMANN,
+     WALT STEVENS, PEIFENG SU, SHUJUN SU, CHET SWALINA,
+     TETSUYA TAKETSUGU, ZHEN TAO, NANDUN THELLAMUREGE
+     SEIKEN TOKURA, JACOPO TOMASI, TSUGUKI TOUMA, TAKAO TSUNEDA,
+     HIROAKI UMEDA, JORGE LUIS GALVEZ VALLEJO, YALI WANG,
+     SIMON WEBB, AARON WEST, THERESA L. WINDUS, MARTA WLOCH,
+     PENG XU, KIYOSHI YAGI, SUSUMU YANAGISAWA, YANG YANG,
+     SOOHAENG YOO, TAKESHI YOSHIKAWA, FEDERICO ZAHARIEV,
+     TOBY ZENG
+
+  WHO ARE SUPPORTED BY THEIR INSTITUTION/UNIVERSITY/COMPANY/GROUP
+  (IN ALPHABETICAL ORDER):
+
+     EP ANALYTICS, FACULTES UNIVERSITAIRES NOTRE-DAME DE LA PAIX,
+     INSTITUTE FOR MOLECULAR SCIENCE, IOWA STATE UNIVERSITY,
+     JACKSON STATE UNIVERSITY, JOHANNES KEPLER UNIVERSITY LINZ,
+     KYUSHU UNIVERSITY, MICHIGAN STATE UNIVERSITY,
+     MIE UNIVERSITY, THE MOLECULAR SCIENCES SOFTWARE INSTITUTE,
+     MOSCOW STATE UNIVERSITY,
+     N. COPERNICUS UNIVERSITY, NAGOYA UNIVERSITY,
+     NANJING UNIVERSITY, NAT. INST. OF ADVANCED INDUSTRIAL
+     SCIENCE AND TECHNOLOGY, NATIONAL INST. OF STANDARDS AND
+     TECHNOLOGY, NESMEYANOV INSTITUTE OF ORGANOELEMENT COMPOUNDS
+     OF RUSSIAN ACADEMY OF SCIENCES, OSAKA PREFECTURE UNIVERSITY,
+     PENNSYLVANIA STATE UNIVERSITY, TOKYO INSTITUTE OF TECHNOLOGY,
+     UNIVERSITY OF AARHUS, UNIVERSITY OF ALBERTA,
+     UNIVERSITY OF CALIFORNIA AT SANTA BARBARA,
+     UNIVERSITY OF COPENHAGEN, UNIVERSITY OF IOWA,
+     UNIVERSITY OF MEMPHIS, UNIVERSITY OF MINNESOTA,
+     UNIVERSITY OF NEBRASKA, UNIVERSITY OF NEW ENGLAND,
+     UNIVERSITY OF NOTRE DAME, UNIVERSITY OF PISA,
+     UNIVERSITY OF SILESIA, UNIVERSITY OF TOKYO,
+     UNIVERSITY OF ZURICH, WASEDA UNIVERSITY, YALE UNIVERSITY
+
+  GAMESS SOFTWARE MANAGEMENT TEAM FOR THIS RELEASE:
+     MARK S. GORDON (TEAM LEAD),
+     BRETT BODE (SENIOR ADVISOR),
+     GIUSEPPE BARCA,
+     COLLEEN BERTONI,
+     KRISTOPHER KEIPERT (ADVISOR),
+     SAROM S. LEANG (DEVELOPMENT LEAD),
+     BUU PHAM,
+     JORGE LUIS GALVEZ VALLEJO (WEBSITE ADMINISTRATOR),
+     PENG XU
+
+ EXECUTION OF GAMESS BEGUN 09:32:59 15-SEP-2022    
+
+            ECHO OF THE FIRST FEW INPUT CARDS -
+ INPUT CARD> $basis gbasis=pm3 $end                                                         
+ INPUT CARD> $contrl runtyp=hessian maxit=60 icharg=0 $end                                  
+ INPUT CARD> $force method=seminum $end                                                     
+ INPUT CARD> $data                                                                          
+ INPUT CARD>Title                                                                           
+ INPUT CARD>C1                                                                              
+ INPUT CARD>C     6.0    -0.000241     -0.000225    -0.000225                               
+ INPUT CARD>H     1.0    0.000190     -0.887780    -0.627616                                
+ INPUT CARD>H     1.0    0.000190     0.887596    -0.627366                                 
+ INPUT CARD>H     1.0    -0.887458     0.000155    0.627722                                 
+ INPUT CARD>H     1.0    0.887319     0.000154    0.627385                                  
+ INPUT CARD> $end                                                                           
+    1000000 WORDS OF MEMORY AVAILABLE
+
+     BASIS OPTIONS
+     -------------
+     GBASIS=PM3          IGAUSS=       0      POLAR=NONE    
+     NDFUNC=       0     NFFUNC=       0     DIFFSP=       F
+     NPFUNC=       0      DIFFS=       F     BASNAM=        
+
+
+     RUN TITLE
+     ---------
+ Title                                                                           
+
+ THE POINT GROUP OF THE MOLECULE IS C1      
+ THE ORDER OF THE PRINCIPAL AXIS IS     0
+
+ ATOM      ATOMIC                      COORDINATES (BOHR)
+           CHARGE         X                   Y                   Z
+ C           6.0    -0.0004554240       -0.0004251883       -0.0004251883
+ H           1.0     0.0003590479       -1.6776609374       -1.1860222655
+ H           1.0     0.0003590479        1.6773132278       -1.1855498340
+ H           1.0    -1.6770524456        0.0002929075        1.1862225765
+ H           1.0     1.6767897737        0.0002910178        1.1855857388
+
+          INTERNUCLEAR DISTANCES (ANGS.)
+          ------------------------------
+
+                1 C          2 H          3 H          4 H          5 H     
+
+   1 C       0.0000000    1.0869101 *  1.0869830 *  1.0869552 *  1.0870406 *
+   2 H       1.0869101 *  0.0000000    1.7753760 *  1.7754495 *  1.7749513 *
+   3 H       1.0869830 *  1.7753760 *  0.0000000    1.7750257 *  1.7745285 *
+   4 H       1.0869552 *  1.7754495 *  1.7750257 *  0.0000000    1.7747770 *
+   5 H       1.0870406 *  1.7749513 *  1.7745285 *  1.7747770 *  0.0000000  
+
+  * ... LESS THAN  3.000
+
+
+ TOTAL NUMBER OF BASIS SET SHELLS             =    5
+ NUMBER OF CARTESIAN GAUSSIAN BASIS FUNCTIONS =    8
+ NUMBER OF ELECTRONS                          =    8
+ CHARGE OF MOLECULE                           =    0
+ SPIN MULTIPLICITY                            =    1
+ NUMBER OF OCCUPIED ORBITALS (ALPHA)          =    4
+ NUMBER OF OCCUPIED ORBITALS (BETA )          =    4
+ TOTAL NUMBER OF ATOMS                        =    5
+ THE NUCLEAR REPULSION ENERGY IS       13.4728149667
+
+ THE PARAMETERS USED IN THIS CALCULATION ARE DESCRIBED IN:
+
+  H: (PM3): J. J. P. STEWART, J. COMP. CHEM. 10, 209 (1989).                    
+  C: (PM3): J. J. P. STEWART, J. COMP. CHEM. 10, 209 (1989).                    
+
+ THERE ARE    1 HEAVY AND    4 LIGHT ATOMS,
+ YIELDING A TOTAL OF        46 MOPAC 2E- INTEGRALS.
+
+     $CONTRL OPTIONS
+     ---------------
+ SCFTYP=RHF          RUNTYP=HESSIAN      EXETYP=RUN     
+ MPLEVL=       0     CITYP =NONE         CCTYP =NONE         VBTYP =NONE    
+ DFTTYP=NONE         TDDFT =NONE    
+ MULT  =       1     ICHARG=       0     NZVAR =       0     COORD =UNIQUE  
+ PP    =NONE         RELWFN=NONE         LOCAL =NONE         NUMGRD=       F
+ ISPHER=      -1     NOSYM =       0     MAXIT =      60     UNITS =ANGS    
+ PLTORB=       F     MOLPLT=       F     AIMPAC=       F     FRIEND=        
+ NPRINT=       7     IREST =       0     GEOM  =INPUT   
+ NORMF =       0     NORMP =       0     ITOL  =      20     ICUT  =       9
+ INTTYP=BEST         GRDTYP=BEST         QMTTOL= 1.0E-06
+
+     $SYSTEM OPTIONS
+     ---------------
+  REPLICATED MEMORY=     1000000 WORDS (ON EVERY NODE).
+ DISTRIBUTED MEMDDI=           0 MILLION WORDS IN AGGREGATE,
+ MEMDDI DISTRIBUTED OVER   1 PROCESSORS IS           0 WORDS/PROCESSOR.
+ TOTAL MEMORY REQUESTED ON EACH PROCESSOR=     1000000 WORDS.
+ TIMLIM=      525600.00 MINUTES, OR     365.0 DAYS.
+ PARALL= F  BALTYP=  DLB     KDIAG=    0  COREFL= F
+ MXSEQ2=     300 MXSEQ3=     150  mem10=         0  mem22=         0
+
+          ----------------
+          PROPERTIES INPUT
+          ----------------
+
+     MOMENTS            FIELD           POTENTIAL          DENSITY
+ IEMOM =       1   IEFLD =       0   IEPOT =       0   IEDEN =       0
+ WHERE =COMASS     WHERE =NUCLEI     WHERE =NUCLEI     WHERE =NUCLEI  
+ OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH       OUTPUT=BOTH    
+ IEMINT=       0   IEFINT=       0                     IEDINT=       0
+                                                       MORB  =       0
+          EXTRAPOLATION IN EFFECT
+ ORBITAL PRINTING OPTION: NPREO=     1     8     2     1
+
+     -------------------------------
+     INTEGRAL TRANSFORMATION OPTIONS
+     -------------------------------
+     NWORD  =            0
+     CUTOFF = 1.0E-09     MPTRAN =       0
+     DIRTRF =       F     AOINTS =DUP     
+
+          ----------------------
+          INTEGRAL INPUT OPTIONS
+          ----------------------
+ NOPK  =       1 NORDER=       0 SCHWRZ=       F
+
+     ------------------------------------------
+     THE POINT GROUP IS C1 , NAXIS= 0, ORDER= 1
+     ------------------------------------------
+
+     DIMENSIONS OF THE SYMMETRY SUBSPACES ARE
+ A   =    8
+
+ ..... DONE SETTING UP THE RUN .....
+ STEP CPU TIME =     0.01 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.07%
+
+     ---------------------------------
+     HESSIAN MATRIX CONTROL PARAMETERS
+     ---------------------------------
+     METHOD=SEMINUM    NVIB  =       2   VIBSIZ= 0.01000
+     RDHESS=       F   PURIFY=       F   PRTIFC=       F
+     VIBANL=       T   DECOMP=       F   PROJCT=       F
+     SCLFAC= 1.00000   PRTSCN=       F   NPRT  =       0
+     PULCOR=       F   NPUN  =       0   REDOVB=       T
+     HSSTYP=GENERAL 
+     THERMOCHEMISTRY WILL BE PRINTED FOR    1 TEMPERATURES:
+      298.15000
+1   ATOM  0
+                                        -------------------
+   COORD  0                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  0
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.000425
+                 2  H                0.000359      -1.677661      -1.186022
+                 3  H                0.000359       1.677313      -1.185550
+                 4  H               -1.677052       0.000293       1.186223
+                 5  H                1.676790       0.000291       1.185586
+
+          ********************
+          1 ELECTRON INTEGRALS
+          ********************
+
+          **************************
+          1 AND 2 ELECTRON INTEGRALS
+          **************************
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.09%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.11%
+
+          -------------
+          GUESS OPTIONS
+          -------------
+          GUESS =HUCKEL            NORB  =       0          NORDER=       0
+          MIX   =       F          PRTMO =       F          PUNMO =       F
+          TOLZ  = 1.0E-08          TOLE  = 1.0E-05
+          SYMDEN=       F          PURIFY=       F
+
+ INITIAL GUESS ORBITALS GENERATED BY HUCKEL   ROUTINE.
+
+ SYMMETRIES FOR INITIAL GUESS ORBITALS FOLLOW.   BOTH SET(S).
+     4 ORBITALS ARE OCCUPIED (    0 CORE ORBITALS).
+     1=A        2=A        3=A        4=A        5=A        6=A        7=A   
+     8=A   
+ ...... END OF INITIAL ORBITAL SELECTION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.16%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+
+     NUCLEAR ENERGY =         7.5103143310
+     MAXIT =   60     NPUNCH=    2
+     EXTRAP=T  DAMP=F  SHIFT=F  RSTRCT=F  DIIS=F  DEM=F  SOSCF=F
+     DENSITY MATRIX CONV=  1.00E-05
+     MEMORY REQUIRED FOR RHF ITERS=       686 WORDS.
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.5437389160    -6.5437389160   0.278826127   0.000000000
+   2  1  0       -6.6249796013    -0.0812406853   0.057067434   0.000000000
+   3  2  0       -6.6323350905    -0.0073554892   0.029992688   0.000000000
+   4  3  0       -6.6337966091    -0.0014615186   0.016826555   0.000000000
+   5  0  0       -6.6342462217    -0.0004496126   0.023457592   0.000000000
+   6  1  0       -6.6344798207    -0.0002335990   0.000008927   0.000000000
+   7  2  0       -6.6344798208    -0.0000000001   0.000005026   0.000000000
+   8  3  0       -6.6344798209    -0.0000000000   0.000002893   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344798209 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS       -13.01472 KCAL/MOL
+ 
+
+          ------------
+          EIGENVECTORS
+          ------------
+
+                      1          2          3          4          5
+                   -1.0981    -0.5014    -0.5014    -0.5013     0.1560
+                     A          A          A          A          A   
+    1  C  1  S    0.745263   0.000140   0.000099  -0.000170   0.666769
+    2  C  1  X    0.000072   0.164741  -0.461404   0.509820  -0.000958
+    3  C  1  Y    0.000061  -0.580272  -0.374518  -0.151445  -0.000805
+    4  C  1  Z    0.000061  -0.368849   0.383115   0.465960  -0.000813
+    5  H  2  S    0.333359   0.594822   0.073267  -0.125846  -0.373831
+    6  H  3  S    0.333390  -0.225951  -0.456468  -0.340053  -0.372430
+    7  H  4  S    0.333378  -0.301009   0.517859  -0.127496  -0.372963
+    8  H  5  S    0.333414  -0.067989  -0.134748   0.593549  -0.371299
+
+                      6          7          8
+                    0.1688     0.1688     0.1689
+                     A          A          A   
+    1  C  1  S   -0.001082   0.000624   0.000883
+    2  C  1  X   -0.518053   0.451319  -0.167276
+    3  C  1  Y    0.150649   0.385456   0.573423
+    4  C  1  Z   -0.457114  -0.384448   0.378549
+    5  H  2  S   -0.121382   0.079967   0.594118
+    6  H  3  S   -0.334437  -0.465091  -0.216652
+    7  H  4  S   -0.137125   0.510918  -0.308022
+    8  H  5  S    0.595472  -0.127252  -0.071508
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.26%
+
+     ----------------------------------------------------------------
+     PROPERTY VALUES FOR THE RHF   SELF-CONSISTENT FIELD WAVEFUNCTION
+     ----------------------------------------------------------------
+
+                    -------------
+                    MOPAC CHARGES
+                    -------------
+         ATOM NO.   TYPE          CHARGE        ATOM  ELECTRON DENSITY
+           1         C             -0.1105          4.1105
+           2         H              0.0277          0.9723
+           3         H              0.0276          0.9724
+           4         H              0.0276          0.9724
+           5         H              0.0275          0.9725
+
+          ---------------------
+          ELECTROSTATIC MOMENTS
+          ---------------------
+
+ POINT   1           X           Y           Z (ANGS)      CHARGE
+                 0.000000    0.000000    0.000000        0.00 (A.U.)
+         DX          DY          DZ         /D/  (DEBYE)
+     0.000086    0.000073    0.000073    0.000134
+ ...... END OF PROPERTY EVALUATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.34%
+ THE VIB 0 GRADIENT RMS = 6.17477569E-05
+
+ THE VIB 0 GEOMETRY GRADIENT IS
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C               -0.000129239      -0.000110116      -0.000109928
+    2 H                0.000046480       0.000011834       0.000029364
+    3 H                0.000046444       0.000019217       0.000063317
+    4 H                0.000048540       0.000039551       0.000028640
+    5 H               -0.000012226       0.000039514      -0.000011392
+  $VIB   
+          IVIB=   0 IATOM=   0 ICOORD=   0 E=       -6.6344798209
+ -1.292387884E-04-1.101159245E-04-1.099283933E-04 4.648041886E-05 1.183443182E-05
+  2.936411837E-05 4.644444150E-05 1.921697324E-05 6.331698419E-05 4.853968942E-05
+  3.955068814E-05 2.863977633E-05-1.222576140E-05 3.951383125E-05-1.139248562E-05
+  8.606033228E-05 7.276216105E-05 7.301872783E-05
+1   ATOM  1
+                                        -------------------
+   COORD  1                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  1
+
+                       ATOM             X              Y              Z
+
+                 1  C                0.009545      -0.000425      -0.000425
+                 2  H                0.000359      -1.677661      -1.186022
+                 3  H                0.000359       1.677313      -1.185550
+                 4  H               -1.677052       0.000293       1.186223
+                 5  H                1.676790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.36%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.36%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344484648    -6.6344484648   0.001456870   0.000000000
+   2  1  0       -6.6344536316    -0.0000051667   0.000498598   0.000000000
+   3  2  0       -6.6344542841    -0.0000006525   0.000187424   0.000000000
+   4  3  0       -6.6344543937    -0.0000001096   0.000092608   0.000000000
+   5  4  0       -6.6344544153    -0.0000000216   0.000045763   0.000000000
+   6  5  0       -6.6344544199    -0.0000000046   0.000022180   0.000000000
+   7  6  0       -6.6344544209    -0.0000000010   0.000011117   0.000000000
+   8  7  0       -6.6344544211    -0.0000000002   0.000005503   0.000000000
+   9  8  0       -6.6344544212    -0.0000000001   0.000002698   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344544212 AFTER   9 ITERATIONS
+
+ HEAT OF FORMATION IS       -12.99878 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.41%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.42%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C                0.005209901      -0.000110101      -0.000059665
+    2 H               -0.000360213       0.000007867       0.000025761
+    3 H               -0.000360183       0.000023186       0.000059720
+    4 H               -0.002192971       0.000040209       0.001320348
+    5 H               -0.002296534       0.000038839      -0.001346165
+  $VIB   
+          IVIB=   1 IATOM=   1 ICOORD=   1 E=       -6.6344544212
+  5.209900810E-03-1.101014375E-04-5.966499416E-05-3.602131560E-04 7.867376811E-06
+  2.576144692E-05-3.601828593E-04 2.318631878E-05 5.972020461E-05-2.192971025E-03
+  4.020921916E-05 1.320348438E-03-2.296533770E-03 3.883852280E-05-1.346165095E-03
+ -6.614451223E-03 7.250352547E-05 1.034057473E-04
+1   ATOM  1
+                                        -------------------
+   COORD  2                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  1
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455       0.009575      -0.000425
+                 2  H                0.000359      -1.677661      -1.186022
+                 3  H                0.000359       1.677313      -1.185550
+                 4  H               -1.677052       0.000293       1.186223
+                 5  H                1.676790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.43%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.43%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344482568    -6.6344482568   0.001456452   0.000000000
+   2  1  0       -6.6344534200    -0.0000051632   0.000498334   0.000000000
+   3  2  0       -6.6344540716    -0.0000006516   0.000187277   0.000000000
+   4  3  0       -6.6344541810    -0.0000001094   0.000092491   0.000000000
+   5  4  0       -6.6344542025    -0.0000000216   0.000045701   0.000000000
+   6  5  0       -6.6344542071    -0.0000000046   0.000022148   0.000000000
+   7  6  0       -6.6344542082    -0.0000000010   0.000011101   0.000000000
+   8  7  0       -6.6344542084    -0.0000000002   0.000005495   0.000000000
+   9  8  0       -6.6344542084    -0.0000000001   0.000002694   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344542084 AFTER   9 ITERATIONS
+
+ HEAT OF FORMATION IS       -12.99865 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.39%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.40%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C               -0.000129223       0.005233324      -0.000160600
+    2 H                0.000047223      -0.002231692      -0.001262206
+    3 H                0.000045681      -0.002267075       0.001398192
+    4 H                0.000044495      -0.000367299       0.000032326
+    5 H               -0.000008176      -0.000367257      -0.000007712
+  $VIB   
+          IVIB=   1 IATOM=   1 ICOORD=   2 E=       -6.6344542084
+ -1.292225839E-04 5.233323681E-03-1.606004204E-04 4.722300030E-05-2.231692376E-03
+ -1.262206294E-03 4.568066272E-05-2.267075100E-03 1.398192437E-03 4.449456015E-05
+ -3.672992069E-04 3.232611734E-05-8.175639301E-06-3.672569986E-04-7.711839399E-06
+  8.575597885E-05-6.621312911E-03 4.154581101E-05
+1   ATOM  1
+                                        -------------------
+   COORD  3                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  1
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425       0.009575
+                 2  H                0.000359      -1.677661      -1.186022
+                 3  H                0.000359       1.677313      -1.185550
+                 4  H               -1.677052       0.000293       1.186223
+                 5  H                1.676790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.41%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.41%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344482665    -6.6344482665   0.001050611   0.000000000
+   2  1  0       -6.6344534318    -0.0000051653   0.000370912   0.000000000
+   3  2  0       -6.6344540840    -0.0000006522   0.000178197   0.000000000
+   4  3  0       -6.6344541935    -0.0000001095   0.000092569   0.000000000
+   5  4  0       -6.6344542150    -0.0000000216   0.000045743   0.000000000
+   6  5  0       -6.6344542197    -0.0000000046   0.000022169   0.000000000
+   7  6  0       -6.6344542207    -0.0000000010   0.000010665   0.000000000
+   8  7  0       -6.6344542209    -0.0000000002   0.000005118   0.000000000
+   9  8  0       -6.6344542210    -0.0000000001   0.000002455   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344542210 AFTER   9 ITERATIONS
+
+ HEAT OF FORMATION IS       -12.99865 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.44%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.44%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C               -0.000131788      -0.000107975       0.005230459
+    2 H                0.000047126      -0.001289097      -0.001303004
+    3 H                0.000047089       0.001319152      -0.001267892
+    4 H                0.001374938       0.000038977      -0.001310519
+    5 H               -0.001337364       0.000038942      -0.001349044
+  $VIB   
+          IVIB=   1 IATOM=   1 ICOORD=   3 E=       -6.6344542210
+ -1.317881024E-04-1.079745268E-04 5.230458709E-03 4.712561022E-05-1.289097255E-03
+ -1.303004334E-03 4.708893434E-05 1.319152420E-03-1.267892014E-03 1.374937860E-03
+  3.897698948E-05-1.310518694E-03-1.337364302E-03 3.894237233E-05-1.349043667E-03
+  8.199316343E-05 7.569986909E-05-6.625251199E-03
+1   ATOM  2
+                                        -------------------
+   COORD  1                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  1
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.000425
+                 2  H                0.010359      -1.677661      -1.186022
+                 3  H                0.000359       1.677313      -1.185550
+                 4  H               -1.677052       0.000293       1.186223
+                 5  H                1.676790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.45%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.45%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344755568    -6.6344755568   0.001088155   0.000000000
+   2  1  0       -6.6344768800    -0.0000013232   0.000494747   0.000000000
+   3  2  0       -6.6344771512    -0.0000002712   0.000228053   0.000000000
+   4  3  0       -6.6344772091    -0.0000000579   0.000106027   0.000000000
+   5  4  0       -6.6344772217    -0.0000000126   0.000049568   0.000000000
+   6  5  0       -6.6344772245    -0.0000000028   0.000023258   0.000000000
+   7  6  0       -6.6344772251    -0.0000000006   0.000010940   0.000000000
+   8  7  0       -6.6344772252    -0.0000000001   0.000005155   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344772252 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS       -13.01309 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.46%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.47%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C               -0.000536177      -0.000104501      -0.000105357
+    2 H                0.000473376       0.000006806       0.000026655
+    3 H                0.000071189       0.000019553       0.000063347
+    4 H                0.000026491       0.000239455       0.000202691
+    5 H               -0.000034879      -0.000161313      -0.000187336
+  $VIB   
+          IVIB=   1 IATOM=   2 ICOORD=   1 E=       -6.6344772252
+ -5.361770008E-04-1.045009563E-04-1.053570052E-04 4.733759476E-04 6.805648349E-06
+  2.665450852E-05 7.118896088E-05 1.955289321E-05 6.334747266E-05 2.649143574E-05
+  2.394552882E-04 2.026910324E-04-3.487934342E-05-1.613128735E-04-1.873360084E-04
+  3.083226821E-03 8.093963033E-05 8.077129782E-05
+1   ATOM  2
+                                        -------------------
+   COORD  2                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  1
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.000425
+                 2  H                0.000359      -1.667661      -1.186022
+                 3  H                0.000359       1.677313      -1.185550
+                 4  H               -1.677052       0.000293       1.186223
+                 5  H                1.676790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.47%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.46%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344652812    -6.6344652812   0.000552098   0.000000000
+   2  1  0       -6.6344663119    -0.0000010308   0.000216521   0.000000000
+   3  2  0       -6.6344664357    -0.0000001237   0.000097268   0.000000000
+   4  3  0       -6.6344664572    -0.0000000216   0.000046647   0.000000000
+   5  4  0       -6.6344664617    -0.0000000044   0.000022161   0.000000000
+   6  5  0       -6.6344664627    -0.0000000010   0.000010488   0.000000000
+   7  6  0       -6.6344664629    -0.0000000002   0.000004957   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344664629 AFTER   7 ITERATIONS
+
+ HEAT OF FORMATION IS       -13.00634 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.48%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.48%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C               -0.000128483      -0.002396321      -0.001445591
+    2 H                0.000045912       0.002668834       0.001611203
+    3 H                0.000046451      -0.000306552      -0.000041861
+    4 H                0.000100583       0.000017175      -0.000041654
+    5 H               -0.000064464       0.000016864      -0.000082097
+  $VIB   
+          IVIB=   1 IATOM=   2 ICOORD=   2 E=       -6.6344664629
+ -1.284829830E-04-2.396320643E-03-1.445590934E-03 4.591226178E-05 2.668833535E-03
+  1.611202880E-03 4.645149012E-05-3.065518971E-04-4.186127881E-05 1.005829127E-04
+  1.717494613E-05-4.165396630E-05-6.446368163E-05 1.686405855E-05-8.209670006E-05
+  8.650909224E-05 4.233731299E-04-1.803480677E-03
+1   ATOM  2
+                                        -------------------
+   COORD  3                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  1
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.000425
+                 2  H                0.000359      -1.677661      -1.176022
+                 3  H                0.000359       1.677313      -1.185550
+                 4  H               -1.677052       0.000293       1.186223
+                 5  H                1.676790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.48%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.48%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344704429    -6.6344704429   0.000821959   0.000000000
+   2  1  0       -6.6344716235    -0.0000011806   0.000356570   0.000000000
+   3  2  0       -6.6344718218    -0.0000001983   0.000160215   0.000000000
+   4  3  0       -6.6344718618    -0.0000000399   0.000073470   0.000000000
+   5  4  0       -6.6344718703    -0.0000000086   0.000034091   0.000000000
+   6  5  0       -6.6344718722    -0.0000000019   0.000015930   0.000000000
+   7  6  0       -6.6344718726    -0.0000000004   0.000007475   0.000000000
+   8  7  0       -6.6344718727    -0.0000000001   0.000003518   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344718727 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS       -13.00973 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.50%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.50%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C               -0.000128597      -0.001436520      -0.001447520
+    2 H                0.000046150       0.001585327       0.001562151
+    3 H                0.000046456       0.000125104       0.000167357
+    4 H                0.000119461      -0.000136735      -0.000120760
+    5 H               -0.000083470      -0.000137176      -0.000161229
+  $VIB   
+          IVIB=   1 IATOM=   2 ICOORD=   3 E=       -6.6344718727
+ -1.285966108E-04-1.436520138E-03-1.447519551E-03 4.614959519E-05 1.585327257E-03
+  1.562151329E-03 4.645589032E-05 1.251035380E-04 1.673574835E-04 1.194608315E-04
+ -1.367348938E-04-1.207599913E-04-8.346970630E-05-1.371757629E-04-1.612292699E-04
+  8.684091960E-05-1.799294146E-03 1.756034730E-03
+1   ATOM  3
+                                        -------------------
+   COORD  1                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  1
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.000425
+                 2  H                0.000359      -1.677661      -1.186022
+                 3  H                0.010359       1.677313      -1.185550
+                 4  H               -1.677052       0.000293       1.186223
+                 5  H                1.676790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.50%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.50%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344755552    -6.6344755552   0.001088029   0.000000000
+   2  1  0       -6.6344768783    -0.0000013231   0.000494742   0.000000000
+   3  2  0       -6.6344771495    -0.0000002712   0.000228074   0.000000000
+   4  3  0       -6.6344772074    -0.0000000579   0.000106048   0.000000000
+   5  4  0       -6.6344772200    -0.0000000126   0.000049583   0.000000000
+   6  5  0       -6.6344772228    -0.0000000028   0.000023268   0.000000000
+   7  6  0       -6.6344772235    -0.0000000006   0.000010946   0.000000000
+   8  7  0       -6.6344772236    -0.0000000001   0.000005158   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344772236 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS       -13.01309 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.52%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.53%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C               -0.000536111      -0.000115751      -0.000105362
+    2 H                0.000071225       0.000011502       0.000029391
+    3 H                0.000473741       0.000024247       0.000060614
+    4 H                0.000026256      -0.000160503       0.000203043
+    5 H               -0.000035112       0.000240504      -0.000187687
+  $VIB   
+          IVIB=   1 IATOM=   3 ICOORD=   1 E=       -6.6344772236
+ -5.361109184E-04-1.157512744E-04-1.053616798E-04 7.122494568E-05 1.150213531E-05
+  2.939122123E-05 4.737413818E-04 2.424749192E-05 6.061431310E-05 2.625628974E-05
+ -1.605025444E-04 2.030427808E-04-3.511169885E-05 2.405041915E-04-1.876866353E-04
+  3.080405901E-03 6.406849808E-05 8.076630339E-05
+1   ATOM  3
+                                        -------------------
+   COORD  2                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  1
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.000425
+                 2  H                0.000359      -1.677661      -1.186022
+                 3  H                0.000359       1.687313      -1.185550
+                 4  H               -1.677052       0.000293       1.186223
+                 5  H                1.676790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.52%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.53%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344653913    -6.6344653913   0.000548199   0.000000000
+   2  1  0       -6.6344664102    -0.0000010189   0.000214815   0.000000000
+   3  2  0       -6.6344665316    -0.0000001214   0.000096313   0.000000000
+   4  3  0       -6.6344665527    -0.0000000211   0.000046215   0.000000000
+   5  4  0       -6.6344665571    -0.0000000043   0.000021965   0.000000000
+   6  5  0       -6.6344665580    -0.0000000009   0.000010399   0.000000000
+   7  6  0       -6.6344665582    -0.0000000002   0.000004916   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344665582 AFTER   7 ITERATIONS
+
+ HEAT OF FORMATION IS       -13.00639 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.53%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.54%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C               -0.000129994      -0.002354397       0.001180381
+    2 H                0.000046483      -0.000304398       0.000133970
+    3 H                0.000046993       0.002625391      -0.001470873
+    4 H               -0.000002610       0.000016858       0.000098076
+    5 H                0.000039127       0.000016545       0.000058445
+  $VIB   
+          IVIB=   1 IATOM=   3 ICOORD=   2 E=       -6.6344665582
+ -1.299938158E-04-2.354397140E-03 1.180381431E-03 4.648295086E-05-3.043979506E-04
+  1.339695885E-04 4.699334372E-05 2.625391280E-03-1.470872682E-03-2.609737173E-06
+  1.685834268E-05 9.807617719E-05 3.912725839E-05 1.654546839E-05 5.844548491E-05
+  8.500421696E-05 4.117067285E-04 1.932438982E-03
+1   ATOM  3
+                                        -------------------
+   COORD  3                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  1
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.000425
+                 2  H                0.000359      -1.677661      -1.186022
+                 3  H                0.000359       1.677313      -1.175550
+                 4  H               -1.677052       0.000293       1.186223
+                 5  H                1.676790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.54%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.54%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344701052    -6.6344701052   0.000822016   0.000000000
+   2  1  0       -6.6344712860    -0.0000011808   0.000356602   0.000000000
+   3  2  0       -6.6344714844    -0.0000001984   0.000160231   0.000000000
+   4  3  0       -6.6344715243    -0.0000000399   0.000073478   0.000000000
+   5  4  0       -6.6344715328    -0.0000000086   0.000034095   0.000000000
+   6  5  0       -6.6344715347    -0.0000000019   0.000015932   0.000000000
+   7  6  0       -6.6344715351    -0.0000000004   0.000007476   0.000000000
+   8  7  0       -6.6344715352    -0.0000000001   0.000003518   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344715352 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS       -13.00952 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.55%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.55%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C               -0.000128597       0.001215237      -0.001446343
+    2 H                0.000046492      -0.000094139       0.000133401
+    3 H                0.000046113      -0.001553696       0.001595688
+    4 H                0.000119809       0.000216116      -0.000121139
+    5 H               -0.000083818       0.000216482      -0.000161607
+  $VIB   
+          IVIB=   1 IATOM=   3 ICOORD=   3 E=       -6.6344715352
+ -1.285971234E-04 1.215236555E-03-1.446343302E-03 4.649178668E-05-9.413893839E-05
+  1.334009015E-04 4.611337549E-05-1.553695566E-03 1.595688120E-03 1.198094711E-04
+  2.161157600E-04-1.211387166E-04-8.381750985E-05 2.164821897E-04-1.616070028E-04
+  8.684049653E-05 1.943003104E-03 1.753932590E-03
+1   ATOM  4
+                                        -------------------
+   COORD  1                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  1
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.000425
+                 2  H                0.000359      -1.677661      -1.186022
+                 3  H                0.000359       1.677313      -1.185550
+                 4  H               -1.667052       0.000293       1.186223
+                 5  H                1.676790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.55%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.56%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344649186    -6.6344649186   0.000552526   0.000000000
+   2  1  0       -6.6344659501    -0.0000010315   0.000216759   0.000000000
+   3  2  0       -6.6344660740    -0.0000001239   0.000097387   0.000000000
+   4  3  0       -6.6344660957    -0.0000000216   0.000046707   0.000000000
+   5  4  0       -6.6344661001    -0.0000000045   0.000022191   0.000000000
+   6  5  0       -6.6344661011    -0.0000000010   0.000010503   0.000000000
+   7  6  0       -6.6344661013    -0.0000000002   0.000004964   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344661013 AFTER   7 ITERATIONS
+
+ HEAT OF FORMATION IS       -13.00611 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.57%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.57%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C               -0.002413352      -0.000109445       0.001225835
+    2 H                0.000024167       0.000063874       0.000099631
+    3 H                0.000023898      -0.000032985       0.000133935
+    4 H                0.002704422       0.000039034      -0.001553207
+    5 H               -0.000339136       0.000039522       0.000093805
+  $VIB   
+          IVIB=   1 IATOM=   4 ICOORD=   1 E=       -6.6344661013
+ -2.413352153E-03-1.094450425E-04 1.225835429E-03 2.416743355E-05 6.387372181E-05
+  9.963096092E-05 2.389830552E-05-3.298505150E-05 1.339351995E-04 2.704422046E-03
+  3.903426885E-05-1.553206609E-03-3.391356319E-04 3.952210330E-05 9.380501980E-05
+  4.373253213E-04 7.318340671E-05 1.949420682E-03
+1   ATOM  4
+                                        -------------------
+   COORD  2                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  1
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.000425
+                 2  H                0.000359      -1.677661      -1.186022
+                 3  H                0.000359       1.677313      -1.185550
+                 4  H               -1.677052       0.010293       1.186223
+                 5  H                1.676790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.57%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.57%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344756259    -6.6344756259   0.001087927   0.000000000
+   2  1  0       -6.6344769488    -0.0000013229   0.000494609   0.000000000
+   3  2  0       -6.6344772199    -0.0000002711   0.000227975   0.000000000
+   4  3  0       -6.6344772777    -0.0000000578   0.000105985   0.000000000
+   5  4  0       -6.6344772903    -0.0000000126   0.000049545   0.000000000
+   6  5  0       -6.6344772931    -0.0000000028   0.000023246   0.000000000
+   7  6  0       -6.6344772937    -0.0000000006   0.000010934   0.000000000
+   8  7  0       -6.6344772939    -0.0000000001   0.000005152   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344772939 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS       -13.01313 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.58%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.58%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C               -0.000123716      -0.000517206      -0.000114447
+    2 H                0.000246385      -0.000010279      -0.000144718
+    3 H               -0.000154346      -0.000003458       0.000239251
+    4 H                0.000043568       0.000466582       0.000031330
+    5 H               -0.000011892       0.000064362      -0.000011415
+  $VIB   
+          IVIB=   1 IATOM=   4 ICOORD=   2 E=       -6.6344772939
+ -1.237155905E-04-5.172063033E-04-1.144470418E-04 2.463854790E-04-1.027859359E-05
+ -1.447184357E-04-1.543459603E-04-3.458219450E-06 2.392509163E-04 4.356838431E-05
+  4.665815952E-04 3.132963750E-05-1.189231263E-05 6.436152119E-05-1.141507634E-05
+  9.404856853E-05 3.067289244E-03 6.492554058E-05
+1   ATOM  4
+                                        -------------------
+   COORD  3                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  1
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.000425
+                 2  H                0.000359      -1.677661      -1.186022
+                 3  H                0.000359       1.677313      -1.185550
+                 4  H               -1.677052       0.000293       1.196223
+                 5  H                1.676790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.58%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.58%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344704901    -6.6344704901   0.000816090   0.000000000
+   2  1  0       -6.6344716576    -0.0000011675   0.000353678   0.000000000
+   3  2  0       -6.6344718531    -0.0000001955   0.000158882   0.000000000
+   4  3  0       -6.6344718924    -0.0000000393   0.000072868   0.000000000
+   5  4  0       -6.6344719009    -0.0000000085   0.000033820   0.000000000
+   6  5  0       -6.6344719027    -0.0000000019   0.000015808   0.000000000
+   7  6  0       -6.6344719032    -0.0000000004   0.000007420   0.000000000
+   8  7  0       -6.6344719033    -0.0000000001   0.000003492   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344719033 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS       -13.00975 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.59%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.59%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C                0.001171484      -0.000110694      -0.001444165
+    2 H                0.000219910      -0.000056607      -0.000117539
+    3 H                0.000220225       0.000087935      -0.000083964
+    4 H               -0.001495031       0.000039852       0.001553928
+    5 H               -0.000116587       0.000039514       0.000091741
+  $VIB   
+          IVIB=   1 IATOM=   4 ICOORD=   3 E=       -6.6344719033
+  1.171483567E-03-1.106939750E-04-1.444164602E-03 2.199098519E-04-5.660655458E-05
+ -1.175394663E-04 2.202250378E-04 8.793461406E-05-8.396444548E-05-1.495031244E-03
+  3.985211827E-05 1.553927703E-03-1.165872124E-04 3.951379723E-05 9.174081047E-05
+  1.956923206E-03 7.155234088E-05 1.735478322E-03
+1   ATOM  5
+                                        -------------------
+   COORD  1                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  1
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.000425
+                 2  H                0.000359      -1.677661      -1.186022
+                 3  H                0.000359       1.677313      -1.185550
+                 4  H               -1.677052       0.000293       1.186223
+                 5  H                1.686790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.60%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.60%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344657092    -6.6344657092   0.000548545   0.000000000
+   2  1  0       -6.6344667288    -0.0000010195   0.000215017   0.000000000
+   3  2  0       -6.6344668504    -0.0000001216   0.000096422   0.000000000
+   4  3  0       -6.6344668716    -0.0000000212   0.000046270   0.000000000
+   5  4  0       -6.6344668759    -0.0000000044   0.000021994   0.000000000
+   6  5  0       -6.6344668769    -0.0000000009   0.000010414   0.000000000
+   7  6  0       -6.6344668771    -0.0000000002   0.000004924   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344668771 AFTER   7 ITERATIONS
+
+ HEAT OF FORMATION IS       -13.00660 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.60%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.60%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C               -0.002371606      -0.000110783      -0.001400181
+    2 H                0.000023812      -0.000039352      -0.000040088
+    3 H                0.000023542       0.000070573      -0.000006479
+    4 H               -0.000268828       0.000039551      -0.000075937
+    5 H                0.002593081       0.000040011       0.001522685
+  $VIB   
+          IVIB=   1 IATOM=   5 ICOORD=   1 E=       -6.6344668771
+ -2.371605830E-03-1.107831447E-04-1.400181107E-03 2.381177216E-05-3.935159257E-05
+ -4.008807608E-05 2.354152365E-05 7.057329003E-05-6.478518084E-06-2.688279702E-04
+  3.955094395E-05-7.593703208E-05 2.593080505E-03 4.001050325E-05 1.522684733E-03
+  4.247485713E-04 7.182737053E-05-1.787154226E-03
+1   ATOM  5
+                                        -------------------
+   COORD  2                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  1
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.000425
+                 2  H                0.000359      -1.677661      -1.186022
+                 3  H                0.000359       1.677313      -1.185550
+                 4  H               -1.677052       0.000293       1.186223
+                 5  H                1.676790       0.010291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.61%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.61%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344756241    -6.6344756241   0.001087779   0.000000000
+   2  1  0       -6.6344769468    -0.0000013227   0.000494604   0.000000000
+   3  2  0       -6.6344772179    -0.0000002711   0.000228000   0.000000000
+   4  3  0       -6.6344772757    -0.0000000578   0.000106009   0.000000000
+   5  4  0       -6.6344772883    -0.0000000126   0.000049563   0.000000000
+   6  5  0       -6.6344772911    -0.0000000028   0.000023257   0.000000000
+   7  6  0       -6.6344772917    -0.0000000006   0.000010941   0.000000000
+   8  7  0       -6.6344772919    -0.0000000001   0.000005156   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344772919 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS       -13.01313 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.62%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.62%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C               -0.000134784      -0.000517127      -0.000114440
+    2 H               -0.000153608      -0.000010555      -0.000145122
+    3 H                0.000247436      -0.000003732       0.000239654
+    4 H                0.000048211       0.000064398       0.000028621
+    5 H               -0.000007255       0.000467016      -0.000008713
+  $VIB   
+          IVIB=   1 IATOM=   5 ICOORD=   2 E=       -6.6344772919
+ -1.347841851E-04-5.171274295E-04-1.144399102E-04-1.536078481E-04-1.055496750E-05
+ -1.451222538E-04 2.474358915E-04-3.731990194E-06 2.396536678E-04 4.821092828E-05
+  6.439838862E-05 2.862131170E-05-7.254786539E-06 4.670159986E-04-8.712815475E-06
+  7.746794379E-05 3.063971753E-03 6.493378427E-05
+1   ATOM  5
+                                        -------------------
+   COORD  3                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  1
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.000425
+                 2  H                0.000359      -1.677661      -1.186022
+                 3  H                0.000359       1.677313      -1.185550
+                 4  H               -1.677052       0.000293       1.186223
+                 5  H                1.676790       0.000291       1.195586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.62%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.62%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344708931    -6.6344708931   0.000816199   0.000000000
+   2  1  0       -6.6344720610    -0.0000011678   0.000353737   0.000000000
+   3  2  0       -6.6344722565    -0.0000001956   0.000158911   0.000000000
+   4  3  0       -6.6344722959    -0.0000000394   0.000072882   0.000000000
+   5  4  0       -6.6344723043    -0.0000000085   0.000033827   0.000000000
+   6  5  0       -6.6344723062    -0.0000000019   0.000015811   0.000000000
+   7  6  0       -6.6344723066    -0.0000000004   0.000007422   0.000000000
+   8  7  0       -6.6344723067    -0.0000000001   0.000003493   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344723067 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS       -13.01000 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.63%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.63%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C               -0.001428779      -0.000110692      -0.001442681
+    2 H               -0.000127265      -0.000057012      -0.000117976
+    3 H               -0.000127651       0.000088340      -0.000084400
+    4 H                0.000153033       0.000039551       0.000131778
+    5 H                0.001530662       0.000039814       0.001513280
+  $VIB   
+          IVIB=   1 IATOM=   5 ICOORD=   3 E=       -6.6344723067
+ -1.428778555E-03-1.106919575E-04-1.442681360E-03-1.272650337E-04-5.701214584E-05
+ -1.179758395E-04-1.276513631E-04 8.833977868E-05-8.439987178E-05 1.530328044E-04
+  3.955063304E-05 1.317775103E-04 1.530662147E-03 3.981369164E-05 1.513279561E-03
+ -1.783842895E-03 7.155490156E-05 1.733189231E-03
+1   ATOM  1
+                                        -------------------
+   COORD  1                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  2
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.010455      -0.000425      -0.000425
+                 2  H                0.000359      -1.677661      -1.186022
+                 3  H                0.000359       1.677313      -1.185550
+                 4  H               -1.677052       0.000293       1.186223
+                 5  H                1.676790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.63%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.63%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344458803    -6.6344458803   0.001457697   0.000000000
+   2  1  0       -6.6344510468    -0.0000051665   0.000499018   0.000000000
+   3  2  0       -6.6344516992    -0.0000006525   0.000187634   0.000000000
+   4  3  0       -6.6344518088    -0.0000001096   0.000092601   0.000000000
+   5  4  0       -6.6344518304    -0.0000000216   0.000045759   0.000000000
+   6  5  0       -6.6344518350    -0.0000000046   0.000022178   0.000000000
+   7  6  0       -6.6344518360    -0.0000000010   0.000011119   0.000000000
+   8  7  0       -6.6344518363    -0.0000000002   0.000005504   0.000000000
+   9  8  0       -6.6344518363    -0.0000000001   0.000002698   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344518363 AFTER   9 ITERATIONS
+
+ HEAT OF FORMATION IS       -12.99716 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.64%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.64%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C               -0.005468368      -0.000110096      -0.000054606
+    2 H                0.000453193       0.000006357       0.000024462
+    3 H                0.000453091       0.000024697       0.000058422
+    4 H                0.002332900       0.000038873      -0.001307370
+    5 H                0.002229184       0.000040170       0.001279091
+  $VIB   
+          IVIB=   2 IATOM=   1 ICOORD=   1 E=       -6.6344518363
+ -5.468367862E-03-1.100963995E-04-5.460555571E-05 4.531928463E-04 6.356793432E-06
+  2.446236571E-05 4.530905691E-04 2.469673634E-05 5.842213264E-05 2.332900244E-03
+  3.887292075E-05-1.307369530E-03 2.229184202E-03 4.016994894E-05 1.279090588E-03
+  6.785993553E-03 7.250878173E-05 1.109253718E-04
+1   ATOM  1
+                                        -------------------
+   COORD  2                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  2
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.010425      -0.000425
+                 2  H                0.000359      -1.677661      -1.186022
+                 3  H                0.000359       1.677313      -1.185550
+                 4  H               -1.677052       0.000293       1.186223
+                 5  H                1.676790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.64%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.64%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344460546    -6.6344460546   0.001457113   0.000000000
+   2  1  0       -6.6344512176    -0.0000051630   0.000498675   0.000000000
+   3  2  0       -6.6344518692    -0.0000006516   0.000187449   0.000000000
+   4  3  0       -6.6344519786    -0.0000001094   0.000092484   0.000000000
+   5  4  0       -6.6344520001    -0.0000000216   0.000045698   0.000000000
+   6  5  0       -6.6344520047    -0.0000000046   0.000022146   0.000000000
+   7  6  0       -6.6344520057    -0.0000000010   0.000011103   0.000000000
+   8  7  0       -6.6344520060    -0.0000000002   0.000005495   0.000000000
+   9  8  0       -6.6344520060    -0.0000000001   0.000002693   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344520060 AFTER   9 ITERATIONS
+
+ HEAT OF FORMATION IS       -12.99726 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.65%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.65%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C               -0.000129218      -0.005453553      -0.000164911
+    2 H                0.000045716       0.002298287       0.001365257
+    3 H                0.000047187       0.002262548      -0.001227246
+    4 H                0.000043155       0.000446417       0.000033471
+    5 H               -0.000006840       0.000446301      -0.000006571
+  $VIB   
+          IVIB=   2 IATOM=   1 ICOORD=   2 E=       -6.6344520060
+ -1.292175320E-04-5.453553158E-03-1.649109348E-04 4.571627650E-05 2.298287080E-03
+  1.365257150E-03 4.718666073E-05 2.262547773E-03-1.227245786E-03 4.315461825E-05
+  4.464171508E-04 3.347079820E-05-6.840023505E-06 4.463011538E-04-6.571227629E-06
+  8.576123427E-05 6.766340961E-03 3.514928492E-05
+1   ATOM  1
+                                        -------------------
+   COORD  3                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  2
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.010425
+                 2  H                0.000359      -1.677661      -1.186022
+                 3  H                0.000359       1.677313      -1.185550
+                 4  H               -1.677052       0.000293       1.186223
+                 5  H                1.676790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.65%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.65%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344460683    -6.6344460683   0.001050927   0.000000000
+   2  1  0       -6.6344512334    -0.0000051651   0.000371034   0.000000000
+   3  2  0       -6.6344518856    -0.0000006521   0.000178183   0.000000000
+   4  3  0       -6.6344519951    -0.0000001095   0.000092563   0.000000000
+   5  4  0       -6.6344520166    -0.0000000216   0.000045740   0.000000000
+   6  5  0       -6.6344520212    -0.0000000046   0.000022168   0.000000000
+   7  6  0       -6.6344520223    -0.0000000010   0.000010665   0.000000000
+   8  7  0       -6.6344520225    -0.0000000002   0.000005118   0.000000000
+   9  8  0       -6.6344520226    -0.0000000001   0.000002455   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344520226 AFTER   9 ITERATIONS
+
+ HEAT OF FORMATION IS       -12.99727 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.66%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.66%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C               -0.000126728      -0.000112286      -0.005450239
+    2 H                0.000045829       0.001338077       0.001367476
+    3 H                0.000045794      -0.001305991       0.001400256
+    4 H               -0.001252500       0.000040119       0.001362013
+    5 H                0.001287604       0.000040080       0.001320494
+  $VIB   
+          IVIB=   2 IATOM=   1 ICOORD=   3 E=       -6.6344520226
+ -1.267278846E-04-1.122856603E-04-5.450239027E-03 4.582939678E-05 1.338077380E-03
+  1.367476001E-03 4.579411585E-05-1.305990588E-03 1.400255877E-03-1.252500031E-03
+  4.011897218E-05 1.362013467E-03 1.287604403E-03 4.007989558E-05 1.320493682E-03
+  8.951223597E-05 6.930382336E-05 6.770808732E-03
+1   ATOM  2
+                                        -------------------
+   COORD  1                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  2
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.000425
+                 2  H               -0.009641      -1.677661      -1.186022
+                 3  H                0.000359       1.677313      -1.185550
+                 4  H               -1.677052       0.000293       1.186223
+                 5  H                1.676790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.66%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.66%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344764864    -6.6344764864   0.001088192   0.000000000
+   2  1  0       -6.6344778097    -0.0000013233   0.000494764   0.000000000
+   3  2  0       -6.6344780809    -0.0000002712   0.000228061   0.000000000
+   4  3  0       -6.6344781388    -0.0000000579   0.000106031   0.000000000
+   5  4  0       -6.6344781514    -0.0000000126   0.000049570   0.000000000
+   6  5  0       -6.6344781542    -0.0000000028   0.000023259   0.000000000
+   7  6  0       -6.6344781548    -0.0000000006   0.000010941   0.000000000
+   8  7  0       -6.6344781549    -0.0000000001   0.000005155   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344781549 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS       -13.01367 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.66%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.67%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C                0.000277660      -0.000106007      -0.000106652
+    2 H               -0.000380397       0.000007922       0.000027312
+    3 H                0.000021710       0.000019557       0.000063334
+    4 H                0.000071013      -0.000161085      -0.000146976
+    5 H                0.000010015       0.000239612       0.000162982
+  $VIB   
+          IVIB=   2 IATOM=   2 ICOORD=   1 E=       -6.6344781549
+  2.776600507E-04-1.060069251E-04-1.066522781E-04-3.803974173E-04 7.922398996E-06
+  2.731214516E-05 2.170973556E-05 1.955737857E-05 6.333429881E-05 7.101272169E-05
+ -1.610851873E-04-1.469763056E-04 1.001490938E-05 2.396123349E-04 1.629821398E-04
+ -2.911728987E-03 7.862282353E-05 7.802948744E-05
+1   ATOM  2
+                                        -------------------
+   COORD  2                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  2
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.000425
+                 2  H                0.000359      -1.687661      -1.186022
+                 3  H                0.000359       1.677313      -1.185550
+                 4  H               -1.677052       0.000293       1.186223
+                 5  H                1.676790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.67%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.67%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344657017    -6.6344657017   0.000548338   0.000000000
+   2  1  0       -6.6344667211    -0.0000010193   0.000214896   0.000000000
+   3  2  0       -6.6344668426    -0.0000001216   0.000096420   0.000000000
+   4  3  0       -6.6344668638    -0.0000000212   0.000046265   0.000000000
+   5  4  0       -6.6344668682    -0.0000000044   0.000021989   0.000000000
+   6  5  0       -6.6344668691    -0.0000000009   0.000010411   0.000000000
+   7  6  0       -6.6344668693    -0.0000000002   0.000004922   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344668693 AFTER   7 ITERATIONS
+
+ HEAT OF FORMATION IS       -13.00659 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.67%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.67%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C               -0.000129994       0.002134339       0.001181392
+    2 H                0.000047029      -0.002594234      -0.001505380
+    3 H                0.000046447       0.000335453       0.000168015
+    4 H               -0.000002442       0.000062101       0.000097802
+    5 H                0.000038960       0.000062340       0.000058172
+  $VIB   
+          IVIB=   2 IATOM=   2 ICOORD=   2 E=       -6.6344668693
+ -1.299939042E-04 2.134339495E-03 1.181391580E-03 4.702913316E-05-2.594233718E-03
+ -1.505380319E-03 4.644706452E-05 3.354529690E-04 1.680146640E-04-2.442435708E-06
+  6.210090910E-05 9.780216739E-05 3.896014226E-05 6.234034527E-05 5.817190780E-05
+  8.500467708E-05-2.706419104E-04 1.933240809E-03
+1   ATOM  2
+                                        -------------------
+   COORD  3                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  2
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.000425
+                 2  H                0.000359      -1.677661      -1.196022
+                 3  H                0.000359       1.677313      -1.185550
+                 4  H               -1.677052       0.000293       1.186223
+                 5  H                1.676790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.68%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.68%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344710743    -6.6344710743   0.000816532   0.000000000
+   2  1  0       -6.6344722425    -0.0000011682   0.000353853   0.000000000
+   3  2  0       -6.6344724381    -0.0000001956   0.000158949   0.000000000
+   4  3  0       -6.6344724775    -0.0000000394   0.000072892   0.000000000
+   5  4  0       -6.6344724860    -0.0000000085   0.000033828   0.000000000
+   6  5  0       -6.6344724878    -0.0000000019   0.000015810   0.000000000
+   7  6  0       -6.6344724882    -0.0000000004   0.000007421   0.000000000
+   8  7  0       -6.6344724883    -0.0000000001   0.000003492   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344724883 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS       -13.01012 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.68%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.68%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C               -0.000129895       0.001190504       0.001223283
+    2 H                0.000046807      -0.001531738      -0.001494930
+    3 H                0.000046443      -0.000085167      -0.000039853
+    4 H               -0.000019865       0.000213017       0.000175550
+    5 H                0.000056511       0.000213383       0.000135950
+  $VIB   
+          IVIB=   2 IATOM=   2 ICOORD=   3 E=       -6.6344724883
+ -1.298953189E-04 1.190503986E-03 1.223283376E-03 4.680741872E-05-1.531737690E-03
+ -1.494929707E-03 4.644254582E-05-8.516688624E-05-3.985320351E-05-1.986532894E-05
+  2.130171144E-04 1.755496410E-04 5.651068328E-05 2.133834753E-04 1.359498937E-04
+  8.467121458E-05 1.942526834E-03-1.593461690E-03
+1   ATOM  3
+                                        -------------------
+   COORD  1                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  2
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.000425
+                 2  H                0.000359      -1.677661      -1.186022
+                 3  H               -0.009641       1.677313      -1.185550
+                 4  H               -1.677052       0.000293       1.186223
+                 5  H                1.676790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.68%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.68%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344764841    -6.6344764841   0.001088066   0.000000000
+   2  1  0       -6.6344778073    -0.0000013232   0.000494760   0.000000000
+   3  2  0       -6.6344780785    -0.0000002712   0.000228082   0.000000000
+   4  3  0       -6.6344781364    -0.0000000579   0.000106052   0.000000000
+   5  4  0       -6.6344781490    -0.0000000126   0.000049585   0.000000000
+   6  5  0       -6.6344781518    -0.0000000028   0.000023268   0.000000000
+   7  6  0       -6.6344781524    -0.0000000006   0.000010946   0.000000000
+   8  7  0       -6.6344781526    -0.0000000001   0.000005158   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344781526 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS       -13.01367 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.69%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.69%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C                0.000277594      -0.000114246      -0.000106656
+    2 H                0.000021746       0.000011498       0.000029378
+    3 H               -0.000380835       0.000023130       0.000061272
+    4 H                0.000071246       0.000240351      -0.000147328
+    5 H                0.000010249      -0.000160733       0.000163333
+  $VIB   
+          IVIB=   2 IATOM=   3 ICOORD=   1 E=       -6.6344781526
+  2.775939959E-04-1.142460158E-04-1.066555641E-04 2.174571518E-05 1.149783494E-05
+  2.937787327E-05-3.808348519E-04 2.313034141E-05 6.127240885E-05 7.124590638E-05
+  2.403507077E-04-1.473277815E-04 1.024923441E-05-1.607328682E-04 1.633330635E-04
+ -2.908908079E-03 6.638500356E-05 7.802612837E-05
+1   ATOM  3
+                                        -------------------
+   COORD  2                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  2
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.000425
+                 2  H                0.000359      -1.677661      -1.186022
+                 3  H                0.000359       1.667313      -1.185550
+                 4  H               -1.677052       0.000293       1.186223
+                 5  H                1.676790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.70%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.69%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344655917    -6.6344655917   0.000551838   0.000000000
+   2  1  0       -6.6344666220    -0.0000010304   0.000216402   0.000000000
+   3  2  0       -6.6344667456    -0.0000001236   0.000097162   0.000000000
+   4  3  0       -6.6344667672    -0.0000000216   0.000046597   0.000000000
+   5  4  0       -6.6344667716    -0.0000000044   0.000022137   0.000000000
+   6  5  0       -6.6344667725    -0.0000000010   0.000010477   0.000000000
+   7  6  0       -6.6344667728    -0.0000000002   0.000004951   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344667728 AFTER   7 ITERATIONS
+
+ HEAT OF FORMATION IS       -13.00653 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.68%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.68%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C               -0.000128483       0.002175906      -0.001444571
+    2 H                0.000046488       0.000337607      -0.000075726
+    3 H                0.000045876      -0.002637912       0.001644591
+    4 H                0.000100749       0.000062081      -0.000041926
+    5 H               -0.000064629       0.000062318      -0.000082368
+  $VIB   
+          IVIB=   2 IATOM=   3 ICOORD=   2 E=       -6.6344667728
+ -1.284830756E-04 2.175905579E-03-1.444570870E-03 4.648756663E-05 3.376069163E-04
+ -7.572563942E-05 4.587608353E-05-2.637911585E-03 1.644590633E-03 1.007488139E-04
+  6.208111447E-05-4.192591892E-05-6.462938849E-05 6.231797478E-05-8.236820515E-05
+  8.650956074E-05-2.744057958E-04-1.802685636E-03
+1   ATOM  3
+                                        -------------------
+   COORD  3                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  2
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.000425
+                 2  H                0.000359      -1.677661      -1.186022
+                 3  H                0.000359       1.677313      -1.195550
+                 4  H               -1.677052       0.000293       1.186223
+                 5  H                1.676790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.68%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.68%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344714156    -6.6344714156   0.000816593   0.000000000
+   2  1  0       -6.6344725840    -0.0000011684   0.000353887   0.000000000
+   3  2  0       -6.6344727797    -0.0000001957   0.000158966   0.000000000
+   4  3  0       -6.6344728190    -0.0000000394   0.000072900   0.000000000
+   5  4  0       -6.6344728275    -0.0000000085   0.000033832   0.000000000
+   6  5  0       -6.6344728294    -0.0000000019   0.000015812   0.000000000
+   7  6  0       -6.6344728298    -0.0000000004   0.000007422   0.000000000
+   8  7  0       -6.6344728299    -0.0000000001   0.000003493   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344728299 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS       -13.01033 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.69%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.69%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C               -0.000129895      -0.001409763       0.001222128
+    2 H                0.000046479       0.000116312      -0.000073810
+    3 H                0.000046772       0.001562248      -0.001460579
+    4 H               -0.000020212      -0.000134179       0.000175931
+    5 H                0.000056857      -0.000134619       0.000136330
+  $VIB   
+          IVIB=   2 IATOM=   3 ICOORD=   3 E=       -6.6344728299
+ -1.298948200E-04-1.409762788E-03 1.222127575E-03 4.647861698E-05 1.163123818E-04
+ -7.380978450E-05 4.677164500E-05 1.562248373E-03-1.460578641E-03-2.021244193E-05
+ -1.341792781E-04 1.759307747E-04 5.685700000E-05-1.346186883E-04 1.363300752E-04
+  8.467163220E-05-1.796239442E-03-1.591361224E-03
+1   ATOM  4
+                                        -------------------
+   COORD  1                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  2
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.000425
+                 2  H                0.000359      -1.677661      -1.186022
+                 3  H                0.000359       1.677313      -1.185550
+                 4  H               -1.687052       0.000293       1.186223
+                 5  H                1.676790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.69%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.69%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344660730    -6.6344660730   0.000548706   0.000000000
+   2  1  0       -6.6344670931    -0.0000010201   0.000215114   0.000000000
+   3  2  0       -6.6344672149    -0.0000001218   0.000096551   0.000000000
+   4  3  0       -6.6344672361    -0.0000000212   0.000046332   0.000000000
+   5  4  0       -6.6344672405    -0.0000000044   0.000022022   0.000000000
+   6  5  0       -6.6344672414    -0.0000000009   0.000010427   0.000000000
+   7  6  0       -6.6344672416    -0.0000000002   0.000004930   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344672416 AFTER   7 ITERATIONS
+
+ HEAT OF FORMATION IS       -13.00682 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.70%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.70%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C                0.002113203      -0.000110785      -0.001401409
+    2 H                0.000068970      -0.000039152      -0.000039760
+    3 H                0.000069169       0.000070374      -0.000006151
+    4 H               -0.002556489       0.000040050       0.001563419
+    5 H                0.000305146       0.000039514      -0.000116098
+  $VIB   
+          IVIB=   2 IATOM=   4 ICOORD=   1 E=       -6.6344672416
+  2.113203330E-03-1.107852768E-04-1.401409296E-03 6.897019488E-05-3.915162180E-05
+ -3.975992638E-05 6.916929373E-05 7.037350166E-05-6.151173293E-06-2.556488979E-03
+  4.004960938E-05 1.563418831E-03 3.051461599E-04 3.951378755E-05-1.160984355E-04
+ -2.580551944E-04 7.182490911E-05-1.788158809E-03
+1   ATOM  4
+                                        -------------------
+   COORD  2                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  2
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.000425
+                 2  H                0.000359      -1.677661      -1.186022
+                 3  H                0.000359       1.677313      -1.185550
+                 4  H               -1.677052      -0.009707       1.186223
+                 5  H                1.676790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.70%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.70%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344764169    -6.6344764169   0.001087958   0.000000000
+   2  1  0       -6.6344777399    -0.0000013229   0.000494624   0.000000000
+   3  2  0       -6.6344780110    -0.0000002711   0.000227982   0.000000000
+   4  3  0       -6.6344780688    -0.0000000578   0.000105988   0.000000000
+   5  4  0       -6.6344780814    -0.0000000126   0.000049547   0.000000000
+   6  5  0       -6.6344780842    -0.0000000028   0.000023247   0.000000000
+   7  6  0       -6.6344780848    -0.0000000006   0.000010935   0.000000000
+   8  7  0       -6.6344780850    -0.0000000001   0.000005152   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344780850 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS       -13.01363 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.70%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.70%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C               -0.000125051       0.000296940      -0.000113306
+    2 H               -0.000154155       0.000034366       0.000205025
+    3 H                0.000246507       0.000041484      -0.000111035
+    4 H                0.000044584      -0.000387465       0.000030723
+    5 H               -0.000011885       0.000014674      -0.000011407
+  $VIB   
+          IVIB=   2 IATOM=   4 ICOORD=   2 E=       -6.6344780850
+ -1.250512316E-04 2.969404895E-04-1.133058629E-04-1.541550044E-04 3.436625343E-05
+  2.050248822E-04 2.465072932E-04 4.148362347E-05-1.110354650E-04 4.458362655E-05
+ -3.874648447E-04 3.072329682E-05-1.188468365E-05 1.467447831E-05-1.140685110E-05
+  9.200125279E-05-2.922295587E-03 6.731260901E-05
+1   ATOM  4
+                                        -------------------
+   COORD  3                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  2
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.000425
+                 2  H                0.000359      -1.677661      -1.186022
+                 3  H                0.000359       1.677313      -1.185550
+                 4  H               -1.677052       0.000293       1.176223
+                 5  H                1.676790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.70%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.70%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344710185    -6.6344710185   0.000821570   0.000000000
+   2  1  0       -6.6344721986    -0.0000011801   0.000356421   0.000000000
+   3  2  0       -6.6344723968    -0.0000001982   0.000160160   0.000000000
+   4  3  0       -6.6344724367    -0.0000000399   0.000073452   0.000000000
+   5  4  0       -6.6344724453    -0.0000000086   0.000034086   0.000000000
+   6  5  0       -6.6344724471    -0.0000000019   0.000015929   0.000000000
+   7  6  0       -6.6344724476    -0.0000000004   0.000007476   0.000000000
+   8  7  0       -6.6344724477    -0.0000000001   0.000003518   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344724477 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS       -13.01009 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.71%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.71%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C               -0.001455795      -0.000109550       0.001228690
+    2 H               -0.000129766       0.000082785       0.000178770
+    3 H               -0.000130154      -0.000052003       0.000213105
+    4 H                0.001622078       0.000039246      -0.001505179
+    5 H                0.000093638       0.000039522      -0.000115386
+  $VIB   
+          IVIB=   2 IATOM=   4 ICOORD=   3 E=       -6.6344724477
+ -1.455795130E-03-1.095496138E-04 1.228689907E-03-1.297661786E-04 8.278490151E-05
+  1.787701662E-04-1.301541861E-04-5.200286681E-05 2.131050416E-04 1.622077697E-03
+  3.924562161E-05-1.505179456E-03 9.363779779E-05 3.952195752E-05-1.153856586E-04
+ -1.787218418E-03 7.345441729E-05-1.607003792E-03
+1   ATOM  5
+                                        -------------------
+   COORD  1                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  2
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.000425
+                 2  H                0.000359      -1.677661      -1.186022
+                 3  H                0.000359       1.677313      -1.185550
+                 4  H               -1.677052       0.000293       1.186223
+                 5  H                1.666790       0.000291       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.72%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.71%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344652810    -6.6344652810   0.000552183   0.000000000
+   2  1  0       -6.6344663120    -0.0000010310   0.000216600   0.000000000
+   3  2  0       -6.6344664357    -0.0000001238   0.000097258   0.000000000
+   4  3  0       -6.6344664573    -0.0000000216   0.000046646   0.000000000
+   5  4  0       -6.6344664618    -0.0000000044   0.000022163   0.000000000
+   6  5  0       -6.6344664627    -0.0000000010   0.000010490   0.000000000
+   7  6  0       -6.6344664629    -0.0000000002   0.000004958   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344664629 AFTER   7 ITERATIONS
+
+ HEAT OF FORMATION IS       -13.00634 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.72%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.72%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C                0.002154795      -0.000109447       0.001224596
+    2 H                0.000068987       0.000064072       0.000099957
+    3 H                0.000069184      -0.000033183       0.000134260
+    4 H                0.000375454       0.000039559       0.000133712
+    5 H               -0.002668420       0.000039000      -0.001592525
+  $VIB   
+          IVIB=   2 IATOM=   5 ICOORD=   1 E=       -6.6344664629
+  2.154795336E-03-1.094472423E-04 1.224596175E-03 6.898725369E-05 6.407222320E-05
+  9.995693841E-05 6.918358702E-05-3.318335615E-05 1.342603536E-04 3.754538225E-04
+  3.955866966E-05 1.337119456E-04-2.668419999E-03 3.899970560E-05-1.592525412E-03
+ -2.609697385E-04 7.318093422E-05 1.948424815E-03
+1   ATOM  5
+                                        -------------------
+   COORD  2                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  2
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.000425
+                 2  H                0.000359      -1.677661      -1.186022
+                 3  H                0.000359       1.677313      -1.185550
+                 4  H               -1.677052       0.000293       1.186223
+                 5  H                1.676790      -0.009709       1.185586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.72%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.72%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344764143    -6.6344764143   0.001087810   0.000000000
+   2  1  0       -6.6344777371    -0.0000013228   0.000494619   0.000000000
+   3  2  0       -6.6344780082    -0.0000002711   0.000228007   0.000000000
+   4  3  0       -6.6344780661    -0.0000000578   0.000106013   0.000000000
+   5  4  0       -6.6344780787    -0.0000000126   0.000049565   0.000000000
+   6  5  0       -6.6344780815    -0.0000000028   0.000023258   0.000000000
+   7  6  0       -6.6344780821    -0.0000000006   0.000010941   0.000000000
+   8  7  0       -6.6344780822    -0.0000000001   0.000005156   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344780822 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS       -13.01363 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.72%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.72%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C               -0.000133453       0.000296862      -0.000113303
+    2 H                0.000247317       0.000034640       0.000205428
+    3 H               -0.000153801       0.000041760      -0.000111439
+    4 H                0.000048203       0.000014711       0.000028629
+    5 H               -0.000008265      -0.000387973      -0.000009316
+  $VIB   
+          IVIB=   2 IATOM=   5 ICOORD=   2 E=       -6.6344780822
+ -1.334534176E-04 2.968616820E-04-1.133031877E-04 2.473173631E-04 3.464031868E-05
+  2.054283396E-04-1.538011738E-04 4.175970874E-05-1.114385906E-04 4.820270909E-05
+  1.471134470E-05 2.862947268E-05-8.265480895E-06-3.879730541E-04-9.316033955E-06
+  7.950908823E-05-2.918978062E-03 6.731489398E-05
+1   ATOM  5
+                                        -------------------
+   COORD  3                             NUCLEAR COORDINATES
+                                        -------------------
+     VIB  2
+
+                       ATOM             X              Y              Z
+
+                 1  C               -0.000455      -0.000425      -0.000425
+                 2  H                0.000359      -1.677661      -1.186022
+                 3  H                0.000359       1.677313      -1.185550
+                 4  H               -1.677052       0.000293       1.186223
+                 5  H                1.676790       0.000291       1.175586
+
+ MOPAC ONE- AND TWO-ELECTRON INTEGRALS REQUIRE       118 WORDS.
+ ...... END OF ONE- AND TWO-ELECTRON INTEGRALS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.72%
+ ...... END OF ONE-ELECTRON INTEGRALS ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.72%
+
+          --------------------------
+               R-PM3 SCF CALCULATION
+          --------------------------
+     DENSITY MATRIX CONV=  1.00E-05
+
+ ITER EX DEM     TOTAL ENERGY        E CHANGE  DENSITY CHANGE    DIIS ERROR
+   1  0  0       -6.6344706211    -6.6344706211   0.000821675   0.000000000
+   2  1  0       -6.6344718014    -0.0000011803   0.000356478   0.000000000
+   3  2  0       -6.6344719996    -0.0000001983   0.000160189   0.000000000
+   4  3  0       -6.6344720395    -0.0000000399   0.000073466   0.000000000
+   5  4  0       -6.6344720481    -0.0000000086   0.000034093   0.000000000
+   6  5  0       -6.6344720500    -0.0000000019   0.000015932   0.000000000
+   7  6  0       -6.6344720504    -0.0000000004   0.000007477   0.000000000
+   8  7  0       -6.6344720505    -0.0000000001   0.000003519   0.000000000
+
+          -----------------
+          DENSITY CONVERGED
+          -----------------
+     TIME TO FORM FOCK OPERATORS=       0.0 SECONDS (       0.0 SEC/ITER)
+     TIME TO SOLVE SCF EQUATIONS=       0.0 SECONDS (       0.0 SEC/ITER)
+
+ FINAL R-PM3 ENERGY IS       -6.6344720505 AFTER   8 ITERATIONS
+
+ HEAT OF FORMATION IS       -13.00984 KCAL/MOL
+ 
+ ...... END OF RHF CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.73%
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.73%
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C                0.001196038      -0.000109552       0.001227179
+    2 H                0.000223062       0.000083192       0.000179203
+    3 H                0.000223377      -0.000052410       0.000213537
+    4 H               -0.000057447       0.000039559      -0.000075349
+    5 H               -0.001585030       0.000039210      -0.001544570
+  $VIB   
+          IVIB=   2 IATOM=   5 ICOORD=   3 E=       -6.6344720505
+  1.196038324E-03-1.095516672E-04 1.227178807E-03 2.230617669E-04 8.319209982E-05
+  1.792033269E-04 2.233769528E-04-5.240961154E-05 2.135372088E-04-5.744694929E-05
+  3.955885500E-05-7.534895791E-05-1.585030095E-03 3.921032392E-05-1.544570385E-03
+  1.957140084E-03 7.345184848E-05-1.604713175E-03
+ ...... END OF NUMERICAL HESSIAN CALCULATION ......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.73%
+
+          ---------------
+          ENERGY GRADIENT
+          ---------------
+
+ UNITS ARE HARTREE/BOHR    E'X               E'Y               E'Z 
+    1 C               -0.000129239      -0.000110116      -0.000109928
+    2 H                0.000046480       0.000011834       0.000029364
+    3 H                0.000046444       0.000019217       0.000063317
+    4 H                0.000048540       0.000039551       0.000028640
+    5 H               -0.000012226       0.000039514      -0.000011392
+
+          -------------------------------
+          CARTESIAN FORCE CONSTANT MATRIX
+          -------------------------------
+
+                                   1                          2
+                               C                          H         
+                          X        Y        Z        X        Y        Z
+  1   C            X 0.533913-0.000000-0.000253-0.040681 0.000076 0.000065
+                   Y-0.000000 0.534344 0.000216 0.000075-0.226516-0.131362
+                   Z-0.000253 0.000216 0.534035 0.000065-0.131354-0.133532
+  2   H            X-0.040681 0.000075 0.000065 0.042689-0.000056-0.000033
+                   Y 0.000076-0.226516-0.131354-0.000056 0.263153 0.155841
+                   Z 0.000065-0.131362-0.133532-0.000033 0.155841 0.152854
+  3   H            X-0.040674-0.000075 0.000065 0.002474 0.000000 0.000001
+                   Y-0.000076-0.226498 0.131252-0.000000-0.032100 0.010499
+                   Z 0.000065 0.131261-0.133415 0.000001-0.010508 0.010361
+  4   H            X-0.226311 0.000067 0.131367-0.002233 0.005151 0.006968
+                   Y 0.000067-0.040697-0.000057 0.020027-0.002239-0.017487
+                   Z 0.131375-0.000057-0.133635 0.017484-0.006971-0.014815
+  5   H            X-0.226303-0.000067-0.131244-0.002252-0.005171-0.007001
+                   Y-0.000067-0.040689-0.000057-0.020046-0.002267-0.017528
+                   Z-0.131252-0.000057-0.133485-0.017516-0.007012-0.014859
+
+                                   3                          4
+                               H                          H         
+                          X        Y        Z        X        Y        Z
+  3   H            X 0.042729 0.000056-0.000033-0.002257-0.020043 0.017519
+                   Y 0.000056 0.263165-0.155785-0.005168-0.002254 0.006998
+                   Z-0.000033-0.155785 0.152813 0.007003 0.017515-0.014853
+  4   H            X-0.002257-0.005168 0.007003 0.263046-0.000051-0.155843
+                   Y-0.020043-0.002254 0.017515-0.000051 0.042702 0.000030
+                   Z 0.017519 0.006998-0.014853-0.155843 0.000030 0.152955
+  5   H            X-0.002275 0.005188-0.007035-0.032214-0.000000-0.010497
+                   Y 0.020062-0.002282 0.017555 0.000000 0.002484-0.000000
+                   Z-0.017551 0.007039-0.014897 0.010510-0.000000 0.010356
+
+                                   5
+                               H         
+                          X        Y        Z
+  5   H            X 0.263075 0.000051 0.155773
+                   Y 0.000051 0.042749 0.000030
+                   Z 0.155773 0.000030 0.152892
+
+          ------------------------          ----------------
+          DIPOLE DERIVATIVE TENSOR          (DEBYE/ANGSTROM)
+          ------------------------          ----------------
+
+        ATOM                 MU-X           MU-Y           MU-Z
+     C          D/DX    -1.266158437   -0.000000497   -0.000710502
+                D/DY    -0.000000497   -1.264949872    0.000604384
+                D/DZ    -0.000710449    0.000604339   -1.265744129
+     H          D/DX     0.566441189    0.000218907    0.000259064
+                D/DY     0.000142147    0.065574913   -0.353068985
+                D/DZ     0.000205007   -0.353550817    0.316481522
+     H          D/DX     0.565908114   -0.000218878    0.000258909
+                D/DY    -0.000142234    0.064828233    0.352918103
+                D/DZ     0.000204928    0.353307191    0.316084433
+     H          D/DX     0.065703932    0.000128359    0.353150055
+                D/DY     0.000193443    0.565933706   -0.000225545
+                D/DZ     0.353770086   -0.000179720    0.315818766
+     H          D/DX     0.064790986   -0.000127893   -0.352961040
+                D/DY    -0.000192860    0.565306787   -0.000224982
+                D/DZ    -0.353471638   -0.000179235    0.315386046
+
+          --------------------------------------------------------
+          NORMAL COORDINATE ANALYSIS IN THE HARMONIC APPROXIMATION
+          --------------------------------------------------------
+
+          ATOMIC WEIGHTS (AMU)
+
+    1     C                12.00000
+    2     H                 1.00782
+    3     H                 1.00782
+    4     H                 1.00782
+    5     H                 1.00782
+
+ MODES    1 TO    6 ARE TAKEN AS ROTATIONS AND TRANSLATIONS.
+
+ ANALYZING SYMMETRY OF NORMAL MODES...
+
+     FREQUENCIES IN CM**-1, IR INTENSITIES IN DEBYE**2/AMU-ANGSTROM**2,
+     REDUCED MASSES IN AMU.
+
+                            1           2           3           4           5
+       FREQUENCY:         5.99        5.81        0.10       62.15       67.59  
+        SYMMETRY:         A           A           A           A           A   
+    REDUCED MASS:      3.15308     3.15865     3.20674     1.00827     1.01305
+    IR INTENSITY:      0.00000     0.00000     0.00000     0.00000     0.00000
+
+  1   C            X  0.24874672  0.00455581  0.00006866 -0.00481350 -0.02153119
+                   Y -0.00455123  0.24884975 -0.00005819  0.00411296 -0.00241877
+                   Z -0.00007067  0.00005767  0.24976430 -0.00000214 -0.00000717
+  2   H            X  0.27835770  0.00667577  0.00006863 -0.42294013  0.40640141
+                   Y -0.00397252  0.21938558 -0.00003919  0.05950503 -0.04093268
+                   Z -0.00087340  0.04173204  0.24973054 -0.07860259  0.05471662
+  3   H            X  0.28130928  0.00350820  0.00006840  0.54314515  0.23791092
+                   Y -0.00398671  0.21939784 -0.00007719  0.05945259 -0.04106962
+                   Z  0.00074557 -0.04162012  0.24973049  0.07863364 -0.05458605
+  4   H            X  0.21754424  0.00402283  0.00004968 -0.06964726 -0.36522799
+                   Y -0.00364529  0.27663496 -0.00005818  0.43159217 -0.04801411
+                   Z -0.04416026 -0.00070860  0.24973059 -0.09185128 -0.48582049
+  5   H            X  0.21756208  0.00401194  0.00008764 -0.06959018 -0.36504958
+                   Y -0.00659775  0.27979895 -0.00005795 -0.53440799  0.12044306
+                   Z  0.04402532  0.00081205  0.24973052  0.09188295  0.48586070
+
+ TRANS. SAYVETZ    X  3.98751803  0.07303107  0.00110041 -0.07694331 -0.34501221
+                   Y -0.07295943  3.98920195 -0.00093264  0.06562367 -0.03867352
+                   Z -0.00111285  0.00090910  4.00391032  0.00003751  0.00008612
+               TOTAL  3.98818560  3.98987049  4.00391058  0.10112735  0.34717298
+
+   ROT. SAYVETZ    X  0.00546545 -0.28152217 -0.00000042  0.53056251 -0.36929993
+                   Y -0.29790228 -0.00513927  0.00000049 -0.62035472 -3.28502906
+                   Z -0.00994990  0.01067377  0.00000079 -3.26574308  0.56983663
+               TOTAL  0.29811850  0.28177132  0.00000102  3.36621663  3.35447644
+
+                            6           7           8           9          10
+       FREQUENCY:        69.50     1362.35     1362.70     1362.98     1451.00  
+        SYMMETRY:         A           A           A           A           A   
+    REDUCED MASS:      1.01248     1.19030     1.19020     1.19015     1.00783
+    IR INTENSITY:      0.00000     1.00276     1.00129     0.99998     0.00002
+
+  1   C            X -0.00166248 -0.07705578 -0.08582512  0.02526743  0.00027292
+                   Y  0.02038405  0.02585975 -0.05328078 -0.10212511  0.00023070
+                   Z -0.00000766 -0.08567413  0.06111780 -0.05355785 -0.00046613
+  2   H            X  0.11386722  0.36293650  0.40572416 -0.11743177 -0.00364418
+                   Y  0.36464556 -0.24177570  0.21720482 -0.00297333  0.28607273
+                   Z -0.48706074  0.31889224 -0.31384494 -0.08955579 -0.40467639
+  3   H            X -0.06103488  0.36160789  0.40141306 -0.12022580  0.00108922
+                   Y  0.36448811  0.17694090 -0.08369829  0.25875514 -0.28667817
+                   Z  0.48710261  0.19276800 -0.05384523  0.40899758 -0.40585298
+  4   H            X -0.02982334  0.30502269 -0.04017538  0.09892742  0.28836250
+                   Y -0.41152427 -0.12089794  0.25272091  0.48167225 -0.00343819
+                   Z -0.03960967  0.44223267  0.02933358  0.09751031  0.40733733
+  5   H            X -0.02967700 -0.11176792  0.25528647 -0.16222567 -0.28905808
+                   Y -0.23659803 -0.12227859  0.24839082  0.47893965  0.00129597
+                   Z  0.03974202  0.06641619 -0.38950618  0.22087763  0.40874304
+
+ TRANS. SAYVETZ    X -0.02666989  0.00031159  0.00034601 -0.00010163 -0.00000091
+                   Y  0.32625383 -0.00010454  0.00021476  0.00041066 -0.00000077
+                   Z  0.00008364  0.00020342 -0.00014471  0.00012653  0.00000093
+               TOTAL  0.32734210  0.00038652  0.00043219  0.00044157  0.00000151
+
+   ROT. SAYVETZ    X  3.29298215  0.00046097 -0.00036739  0.00015556  0.00037123
+                   Y -0.26840105  0.00018407  0.00113480 -0.00054491  0.00043008
+                   Z  0.59169119 -0.00054340 -0.00011599  0.00073474 -0.00000202
+               TOTAL  3.35646675  0.00073597  0.00119842  0.00092788  0.00056814
+
+                           11          12          13          14          15
+       FREQUENCY:      1451.25     3207.50     3208.07     3208.54     3311.56  
+        SYMMETRY:         A           A           A           A           A   
+    REDUCED MASS:      1.00783     1.09188     1.09194     1.09200     1.00783
+    IR INTENSITY:      0.00002     0.02374     0.02372     0.02366     0.00000
+
+  1   C            X -0.00040371 -0.06038061 -0.05456761  0.01955618 -0.00008263
+                   Y -0.00047581  0.01796509 -0.04447452 -0.06862960 -0.00007019
+                   Z  0.00000221 -0.05508749  0.04530564 -0.04381528 -0.00007063
+  2   H            X -0.49609715 -0.02755845 -0.02481541  0.00870740  0.00001135
+                   Y -0.00079082  0.15267799  0.06544125  0.65270164 -0.40597312
+                   Z  0.00073528  0.07708531  0.08106472  0.46351407 -0.28704364
+  3   H            X  0.49994580 -0.02770919 -0.02476138  0.00895291  0.00001161
+                   Y  0.00192130 -0.38314789  0.50479914  0.22685587  0.40677721
+                   Z  0.00310389  0.25142012 -0.35043070 -0.20222301 -0.28763484
+  4   H            X -0.00088749  0.11999692  0.56976928 -0.33751557 -0.40646784
+                   Y -0.49579516  0.00817625 -0.02037676 -0.03109855  0.00001591
+                   Z -0.00091814 -0.12946602 -0.39996102  0.22514070  0.28742133
+  5   H            X  0.00184715  0.65422749  0.12954839  0.08699825  0.40742875
+                   Y  0.50033176  0.00838190 -0.02030205 -0.03128088  0.00001572
+                   Z -0.00294732  0.45688526  0.12987444  0.03527506  0.28809810
+
+ TRANS. SAYVETZ    X  0.00000140  0.00001532  0.00001381 -0.00000494  0.00000001
+                   Y  0.00000164 -0.00000454  0.00001121  0.00001727  0.00000000
+                   Z -0.00000000  0.00000743 -0.00000608  0.00000586  0.00000000
+               TOTAL  0.00000216  0.00001763  0.00001880  0.00001889  0.00000001
+
+   ROT. SAYVETZ    X  0.00024810  0.00005483  0.00000549  0.00018482  0.00000021
+                   Y  0.00021341  0.00019006  0.00034498 -0.00017386  0.00000024
+                   Z -0.00042550 -0.00012643 -0.00000360  0.00015539 -0.00000000
+               TOTAL  0.00053679  0.00023476  0.00034504  0.00029754  0.00000032
+
+ REFERENCE ON SAYVETZ CONDITIONS - A. SAYVETZ, J.CHEM.PHYS., 7, 383-389(1939).
+
+ NOTE - THE MODES J,K ARE ORTHONORMALIZED ACCORDING TO
+ SUM ON I   M(I) * (X(I,J)*X(I,K) + Y(I,J)*Y(I,K) + Z(I,J)*Z(I,K)) = DELTA(J,K)
+
+  MODE FREQ(CM**-1)  SYMMETRY  RED. MASS  IR INTENS.
+     1       5.989    A        3.153077    0.000001
+     2       5.814    A        3.158651    0.000001
+     3       0.096    A        3.206736    0.000000
+     4      62.150    A        1.008269    0.000000
+     5      67.587    A        1.013053    0.000001
+     6      69.503    A        1.012480    0.000000
+     7    1362.346    A        1.190299    1.002761
+     8    1362.700    A        1.190203    1.001291
+     9    1362.984    A        1.190145    0.999983
+    10    1451.001    A        1.007829    0.000019
+    11    1451.254    A        1.007829    0.000022
+    12    3207.498    A        1.091878    0.023744
+    13    3208.074    A        1.091943    0.023721
+    14    3208.542    A        1.091996    0.023656
+    15    3311.564    A        1.007825    0.000001
+
+     -------------------------------
+     THERMOCHEMISTRY AT T=  298.15 K
+     -------------------------------
+
+ USING IDEAL GAS, RIGID ROTOR, HARMONIC NORMAL MODE APPROXIMATIONS.
+ P=  1.01325E+05 PASCAL.
+ V=  4.06261E-26 M**3.
+ ALL FREQUENCIES ARE SCALED BY   1.00000
+ THE MOMENTS OF INERTIA ARE (IN AMU*BOHR**2)
+             11.33592            11.33910            11.34305
+ THE ROTATIONAL SYMMETRY NUMBER IS  1.0
+ THE ROTATIONAL CONSTANTS ARE (IN GHZ)
+    159.05978   159.01512   158.95968
+      7 -     15 VIBRATIONAL MODES ARE USED IN THERMOCHEMISTRY.
+ THE HARMONIC ZERO POINT ENERGY IS (SCALED BY   1.000)
+        0.045395 HARTREE/MOLECULE     9962.982037 CM**-1/MOLECULE 
+       28.485624 KCAL/MOL              119.183849 KJ/MOL
+
+               Q               LN Q
+ ELEC.     1.00000E+00       0.000000
+ TRANS.    2.52294E+06      14.740935
+ ROT.      4.32239E+02       6.068979
+ VIB.      1.00602E+00       0.006004
+ TOT.      1.09708E+09      20.815918
+
+              E         H         G         CV        CP        S
+           KJ/MOL    KJ/MOL    KJ/MOL   J/MOL-K   J/MOL-K   J/MOL-K
+ ELEC.      0.000     0.000     0.000     0.000     0.000     0.000
+ TRANS.     3.718     6.197   -36.542    12.472    20.786   143.348
+ ROT.       3.718     3.718   -15.045    12.472    12.472    62.932
+ VIB.     119.284   119.284   119.169     2.252     2.252     0.385
+ TOTAL    126.721   129.199    67.582    27.195    35.509   206.665
+ VIB. THERMAL CORRECTION E(T)-E(0) = H(T)-H(0) =        99.874 J/MOL
+
+              E         H         G         CV        CP        S
+         KCAL/MOL  KCAL/MOL  KCAL/MOL CAL/MOL-K CAL/MOL-K CAL/MOL-K
+ ELEC.      0.000     0.000     0.000     0.000     0.000     0.000
+ TRANS.     0.889     1.481    -8.734     2.981     4.968    34.261
+ ROT.       0.889     0.889    -3.596     2.981     2.981    15.041
+ VIB.      28.509    28.509    28.482     0.538     0.538     0.092
+ TOTAL     30.287    30.879    16.153     6.500     8.487    49.394
+ VIB. THERMAL CORRECTION E(T)-E(0) = H(T)-H(0) =        23.870 CAL/MOL
+ ......END OF NORMAL COORDINATE ANALYSIS......
+ STEP CPU TIME =     0.00 TOTAL CPU TIME =          0.0 (      0.0 MIN)
+ TOTAL WALL CLOCK TIME=          0.0 SECONDS, CPU UTILIZATION IS    99.74%
+                580000  WORDS OF DYNAMIC MEMORY USED
+ EXECUTION OF GAMESS TERMINATED NORMALLY 09:32:59 15-SEP-2022    
+ DDI: 263640 bytes (0.3 MB / 0 MWords) used by master data server.
+
+ ----------------------------------------
+ CPU timing information for all processes
+ ========================================
+ 0: 0.04 + 0.25 = 0.29
+ ----------------------------------------
+ ddikick.x: exited gracefully.
+----- accounting info -----
+Files used on the master node seylerjupiter were:
+-rw-rw-r-- 1 sseyler sseyler   11583 Sep 15 09:32 /home/sseyler/scratch/gamess/restart/8eeedef4326a6ae242180345a5dc7fef_calculate_vibrations.dat
+-rw-rw-r-- 1 sseyler sseyler     362 Sep 15 09:32 /home/sseyler/scratch/gamess/restart/8eeedef4326a6ae242180345a5dc7fef_calculate_vibrations.F05
+-rw-rw-r-- 1 sseyler sseyler       0 Sep 15 09:32 /home/sseyler/scratch/gamess/restart/8eeedef4326a6ae242180345a5dc7fef_calculate_vibrations.F08
+-rw-rw-r-- 1 sseyler sseyler 1636000 Sep 15 09:32 /home/sseyler/scratch/gamess/restart/8eeedef4326a6ae242180345a5dc7fef_calculate_vibrations.F10
+-rw-rw-r-- 1 sseyler sseyler   11212 Sep 15 09:32 /home/sseyler/scratch/gamess/restart/8eeedef4326a6ae242180345a5dc7fef_calculate_vibrations.rst
+Thu 15 Sep 2022 09:33:02 AM MST
+1.9u 3.8s 0:08.87 65.6% 0+0k 0+8io 0pf+0w
