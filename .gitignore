@@ -41,11 +41,13 @@ coverage/
 *.db
 *.sqlite
 *.zip
+molcalc_data/
 
 # Sphinx documentation
 docs/_build/
 
 # Misc
+pserve
 .python-version
 
 # Enviroment
