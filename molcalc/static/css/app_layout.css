@@ -358,7 +358,7 @@
     position: relative;
 
     display: grid;
- 	grid-template-rows: 60px 10px 1fr;
+ 	grid-template-rows: 60px 10px 1fr 0px 50px;
     grid-template-columns: auto;
     grid-template-areas:
         "menu"
@@ -366,7 +366,7 @@
         "calc"
         "pad2"
         "data";
-    margin: 0 10px 10px 10px;
+    margin: 0 10px 0 10px;
 }
 .mc-content.calculation h1 {
     display: none;
@@ -453,14 +453,15 @@
     grid-area: data;
     background: white;
     /*border-bottom: 2px solid #bbb;*/
-    padding: 20px;
+    padding: 5px 15px;
+    /*margin: 5px 15px;*/
 }
 
 .molcalc.calculation .mc-content .calc {
     grid-area: calc;
     background: white;
     min-height: 100px;
-    padding: 20px;
+    padding: 15px;
 
     display: grid;
     grid-template-columns: 1fr 2fr;
