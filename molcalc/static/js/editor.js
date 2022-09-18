@@ -307,7 +307,7 @@ function getIUPACName() {
 ///////////////////////////////////////////////////////////////////////////////
 var IUPACName;
 function callback(response) {
-    IUPACName = response;
+    IUPACName = response.toLowerCase();
 }
 
 // Get name
@@ -326,6 +326,7 @@ $('.button.getName').click(function () {
 
     requestCactus(search, 'iupac_name', function(data) {
             IUPACName = data.toLowerCase();
+            // callback(data);
 
             var promptCactus = new $.Prompt();
             promptCactus.setMessage(IUPACName);
@@ -363,14 +364,12 @@ $('.button.quantum').click(function () {
             addHydrogens = 0
         }
         var theoryLevel = getTheoryLevel();
-        var smiles_name = sdfToSmiles(mol);
 
         var sdf_data = {
             sdf: mol,
             add_hydrogens: addHydrogens,
             current_view: currentView,
             theory_level: theoryLevel,
-            smiles_name: smiles_name,
             iupac_name: IUPACName,
             trivial_name: 'trivial name'
         };

@@ -67,6 +67,7 @@ def get_config(config=None):
     # Static files
     config.add_static_view("static", "static")
     config.add_static_view("assets", "assets")
+    config.add_static_view("data", "data")
     # config.add_static_view(name="static", path="/var/www/molecalc.cloud/static")
     # config.add_static_view(name="assets", path="/var/www/molecalc.cloud/assets")
 

@@ -238,9 +238,9 @@ def ajax_submitquantum(request):
     iupac_name = request.POST.get('iupac_name', 'N/A')
     _logger.info(f'IUPAC Name: "{iupac_name}"')
 
-    # Get SMILES name (if available)
-    smiles_name = request.POST.get('smiles_name', 'N/A')
-    _logger.info(f'SMILES Name: "{smiles_name}"')
+    # # Get SMILES name (if available)
+    # smiles_name = request.POST.get('smiles_name', 'N/A')
+    # _logger.info(f'SMILES Name: "{smiles_name}"')
 
     # Get "trivial" name (if available)
     trivial_name = request.POST.get('trivial_name', 'N/A')

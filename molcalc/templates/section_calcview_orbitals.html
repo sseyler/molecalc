@@ -18,8 +18,9 @@ var jmolOrb;
 
 waitForElement('#jmolOrb_appletdiv', function() {
     jsmolSetMol(jmolOrb, orbMolecule);
+    Jmol.script(jmolOrb, 'frame 1'); // Seems to fix initial display issue
     Jmol.script(jmolOrb, 'set bondRadiusMilliAngstroms 100; set multipleBondSpacing -0.3');
-	Jmol.script(jmolOrb, 'set bondRadiusMilliAngstroms 100; set multipleBondSpacing -0.3');
+	// Jmol.script(jmolOrb, 'set bondRadiusMilliAngstroms 100; set multipleBondSpacing -0.3');
 	Jmol.script(jmolOrb, 'mo TITLEFORMAT ""');
 	Jmol.script(jmolOrb, 'centerAt average 0.0 0.0 0.0');
 });
@@ -99,14 +100,6 @@ $(function()
         </tr>
     </table>
 
-<div>
-    <a
-      download="nice_download_name.png"
-      href="../static/img/benzene_v1_5.png"
-      class="button">
-      <i class="fa fa-download"></i>
-      Download Orbital Data</a>
-</div>
 
 <ul class="data orbital_levels">
 

@@ -12,9 +12,6 @@ molcalc_configuration.ini
 __pycache__/
 *.py[cod]
 
-molcalc/data
-data/
-
 # Distribution / packaging
 build/
 dist/
@@ -41,7 +38,6 @@ coverage/
 *.db
 *.sqlite
 *.zip
-molcalc_data/
 
 # Sphinx documentation
 docs/_build/
@@ -71,3 +67,5 @@ molcalc/static/jsmol
 molcalc/static/demo
 molcalc/static/rdkit
 
+# ignore calculated data
+molcalc/data/
