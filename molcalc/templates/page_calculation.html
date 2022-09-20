@@ -68,6 +68,27 @@
               <!-- <h3>at 298.15 K and standard pressure</h3> -->
 
             {% include 'section_calcview_thermo.html' %}
+
+            <section class="data">
+                <div>
+                    <a
+                      class="button"
+                      download="optimization.inp"
+                      href="../data/{{hashkey}}/{{hashkey}}.inp"
+                      media_type="text">
+                      <i class="fa fa-download"></i>
+                      GAMESS Input File
+                    </a>
+                    <a
+                      class="button"
+                      download="optimization.out"
+                      href="../data/{{hashkey}}/{{hashkey}}.out"
+                      media_type="text">
+                      <i class="fa fa-download"></i>
+                      GAMESS Output
+                    </a>
+                </div>
+            </section>
         </section>
 
 <!--      <section class="calc calc-sdf">-->
@@ -79,6 +100,27 @@
             <h2>Vibrational Modes</h2>
 
             {% include 'section_calcview_vibrations.html' %}
+
+            <section class="data">
+                <div>
+                    <a
+                      class="button"
+                      download="vibrations.inp"
+                      href="../data/{{hashkey}}/{{hashkey}}_calculate_vibrations.inp"
+                      media_type="text">
+                      <i class="fa fa-download"></i>
+                      GAMESS Input File
+                    </a>
+                    <a
+                      class="button"
+                      download="vibrations.out"
+                      href="../data/{{hashkey}}/{{hashkey}}_calculate_vibrations.out"
+                      media_type="text">
+                      <i class="fa fa-download"></i>
+                      GAMESS Output
+                    </a>
+                </div>
+            </section>
         </section>
 
 
@@ -86,6 +128,27 @@
             <h2>Molecular Orbitals</h2>
 
             {% include 'section_calcview_orbitals.html' %}
+
+            <section class="data">
+                <div>
+                    <a
+                      class="button"
+                      download="orbitals.inp"
+                      href="../data/{{hashkey}}/{{hashkey}}_calculate_orbitals.inp"
+                      media_type="text">
+                      <i class="fa fa-download"></i>
+                      GAMESS Input File
+                    </a>
+                    <a
+                      class="button"
+                      download="orbitals.out"
+                      href="../data/{{hashkey}}/{{hashkey}}_calculate_orbitals.out"
+                      media_type="text">
+                      <i class="fa fa-download"></i>
+                      GAMESS Output
+                    </a>
+                </div>
+            </section>
         </section>
 
 
@@ -96,29 +159,29 @@
         </section>
 
 
-        <section class="data">
-<!--            <hr style="margin-bottom: 10px;">-->
-            <div>
-                <a
-                  class="button"
-                  download="optimization.out"
-                  href="../data/{{hashkey}}/{{hashkey}}.out"
-                  media_type="text">
-                  <i class="fa fa-download"></i>
-                  Download Data
-                </a>
-            </div>
-            <!--<div>-->
-            <!--    <button-->
-            <!--      type="button" class="button"-->
-            <!--      onclick="window.open('../data/{{hashkey}}/{{hashkey}}.out')">-->
-            <!--      onclick="window.location.href='../data/{{hashkey}}/{{hashkey}}.out';">-->
-            <!--      <i class="fa fa-download"></i>-->
-            <!--      window.open-->
-            <!--    </button>-->
-            <!--</div>-->
+<!--        <section class="data">-->
+<!--&lt;!&ndash;            <hr style="margin-bottom: 10px;">&ndash;&gt;-->
+<!--            <div>-->
+<!--                <a-->
+<!--                  class="button"-->
+<!--                  download="optimization.out"-->
+<!--                  href="../data/{{hashkey}}/{{hashkey}}.out"-->
+<!--                  media_type="text">-->
+<!--                  <i class="fa fa-download"></i>-->
+<!--                  Download Data-->
+<!--                </a>-->
+<!--            </div>-->
+<!--            &lt;!&ndash;<div>&ndash;&gt;-->
+<!--            &lt;!&ndash;    <button&ndash;&gt;-->
+<!--            &lt;!&ndash;      type="button" class="button"&ndash;&gt;-->
+<!--            &lt;!&ndash;      onclick="window.open('../data/{{hashkey}}/{{hashkey}}.out')">&ndash;&gt;-->
+<!--            &lt;!&ndash;      onclick="window.location.href='../data/{{hashkey}}/{{hashkey}}.out';">&ndash;&gt;-->
+<!--            &lt;!&ndash;      <i class="fa fa-download"></i>&ndash;&gt;-->
+<!--            &lt;!&ndash;      window.open&ndash;&gt;-->
+<!--            &lt;!&ndash;    </button>&ndash;&gt;-->
+<!--            &lt;!&ndash;</div>&ndash;&gt;-->
 
-        </section>
+<!--        </section>-->
 
     </section>
     <!-- end content -->

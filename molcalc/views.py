@@ -180,6 +180,11 @@ def ajax_smiles_to_sdf(request):
     # return msg
 
 
+# @view_config(route_name="gamessdata", renderer="json")
+# def ajax_gamess_data(request):
+
+
+
 @view_config(route_name="submitquantum", renderer="json")
 def ajax_submitquantum(request):
     """

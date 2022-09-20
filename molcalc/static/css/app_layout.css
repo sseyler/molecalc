@@ -358,14 +358,14 @@
     position: relative;
 
     display: grid;
- 	grid-template-rows: 60px 10px 1fr 0px 50px;
+ 	grid-template-rows: 60px 10px 1fr 10px;  /* 50px */
     grid-template-columns: auto;
     grid-template-areas:
         "menu"
         "pad"
         "calc"
-        "pad2"
-        "data";
+        /*"data"*/
+        "pad2";
     margin: 0 10px 0 10px;
 }
 .mc-content.calculation h1 {
@@ -453,7 +453,7 @@
     grid-area: data;
     background: white;
     /*border-bottom: 2px solid #bbb;*/
-    padding: 5px 15px;
+    padding: 5px 5px; /* Use 15px for "single-button" solution */
     /*margin: 5px 15px;*/
 }
 
@@ -465,11 +465,12 @@
 
     display: grid;
     grid-template-columns: 1fr 2fr;
- 	grid-template-rows: 40px 10px 1fr;
+ 	grid-template-rows: 40px 10px 1fr 50px;
     grid-template-areas:
         "title title"
         "pad pad"
-        "options view";
+        "options view"
+        "data .";
 
     DISPLAY: NONE; /* Without this, JSmol viewer takes over... */
 }
@@ -483,11 +484,12 @@
 */
 .molcalc.calculation .mc-content .calc.onecol {
     grid-template-columns: 1fr 2fr;
- 	grid-template-rows: 40px 10px 1fr;
+ 	grid-template-rows: 40px 10px 1fr 50px;
     grid-template-areas:
         "title title"
         "pad pad"
-        "content content";
+        "content content"
+        "data .";
 }
 .molcalc.calculation .mc-content .calc .tbls_container {
     grid-area: content;
