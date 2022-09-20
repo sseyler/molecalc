@@ -64,8 +64,6 @@ def get_config(config=None):
     config.include("pyramid_jinja2")
     config.add_jinja2_renderer(".html")
 
-    config.
-
     # Static files
     config.add_static_view("static", "static")
     config.add_static_view("assets", "assets")
