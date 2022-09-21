@@ -239,6 +239,7 @@ def ajax_submitquantum(request):
     print(request.POST)
     print(80*'+')
 
+    # TODO Use ChemSpider and RDKit/MolVS for chemical name things
     # Get IUPAC name (if available)
     iupac_name = request.POST.get('iupac_name', 'N/A')
     _logger.info(f'IUPAC Name: "{iupac_name}"')
