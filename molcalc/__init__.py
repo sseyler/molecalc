@@ -84,6 +84,7 @@ def get_config(config=None):
 
     # Ajax paths
     config.add_route("submitquantum", "/ajax/submitquantum")
+    config.add_route("downloadquantum", "/ajax/downloadquantum")
     config.add_route("smiles_to_sdf", "/ajax/smiles")
     config.add_route("sdf_to_smiles", "/ajax/sdf")
 

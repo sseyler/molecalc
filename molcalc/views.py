@@ -28,13 +28,10 @@ def not_found(request):
 
 # Calculation Views
 
-
 @view_config(route_name="editor", renderer="templates/page_editor.html")
 def editor(request):
     """
-
     Standard view for MolCalc. Static HTML.
-
     """
     return {}
 
@@ -44,9 +41,7 @@ def editor(request):
 )
 def view_calculation(request):
     """
-
     View for looking up calculations.
-
     """
 
     # Get the key
@@ -76,11 +71,8 @@ def view_calculation(request):
 )
 def view_calculations(request):
     """
-
     Statistic about current calculations? Iono, maybe not.
     Kind of destroyed the IO / browser last time
-
-
     """
     raise httpexceptions.exception_response(404)
     return {}
@@ -92,9 +84,7 @@ def view_calculations(request):
 @view_config(route_name="about", renderer="templates/page_about.html")
 def about(request):
     """
-
     static about page
-
     """
     return {}
 
@@ -102,9 +92,7 @@ def about(request):
 @view_config(route_name="help", renderer="templates/page_help.html")
 def page_help(request):
     """
-
     static help page
-
     """
     return {}
 
@@ -112,9 +100,7 @@ def page_help(request):
 @view_config(route_name="sdf_to_smiles", renderer="json")
 def ajax_sdf_to_smiles(request):
     """
-
     sdf to smiles conversion
-
     """
     return {"message", "disabled"}
 
@@ -152,9 +138,7 @@ def ajax_sdf_to_smiles(request):
 @view_config(route_name="smiles_to_sdf", renderer="json")
 def ajax_smiles_to_sdf(request):
     """
-
     convert SMILES to SDF format
-
     """
 
     return {"message", "disabled"}
@@ -180,22 +164,59 @@ def ajax_smiles_to_sdf(request):
     # return msg
 
 
-# @view_config(route_name="gamessdata", renderer="json")
-# def ajax_gamess_data(request):
+# @view_config(route_name="downloadquantum", renderer="json")
+# def ajax_downloadquantum(request):
+#
+#     # # Get the key
+#     # matches = request.matchdict
+#     # hashkey = matches["one"]
+#
+#     import zipfile
+#
+#     if not request.POST:
+#         return {
+#             "error": "Error 128 - empty post",
+#             "message": "Error. Empty post.",
+#         }
+#
+#     hashkey = get_hashkey(request)
+#
+#     msg = {"smiles": smiles, "hashkey": hashkey}
+#
+#     with zipfile.ZipFile("gamess_data.zip", mode='w') as archive:
+#         archive.write(FileFromPPQMLoL)
+#
+#     return msg
 
+# def get_hashkey(request):
+#     sdfstr = request.POST["sdf"].encode("utf-8")
+#     theory_level = request.POST.get('theory_level', 'pm3')
+#
+#     sdfstr = fix_sdfstr(sdfstr)
+#     calc_str = sdfstr + "\n" * 3 + theory_level
+#
+#     # hash on sdf (conformer)
+#     hshobj = hashlib.md5(calc_str.encode())
+#     return hshobj.hexdigest()
+#
+#
+# def fix_sdfstr(sdfstr):
+#     sdfstr = sdfstr.decode("utf8")
+#     for _ in range(3):
+#         i = sdfstr.index("\n")
+#         sdfstr = sdfstr[i+1:]
+#     return "\n" * 3 + sdfstr
 
 
 @view_config(route_name="submitquantum", renderer="json")
 def ajax_submitquantum(request):
     """
-
     Setup quantum calculation
-
     """
 
     settings = request.registry.settings
 
-    # Check if user is someone who is a know misuser
+    # Check if user is someone who is a known misuser
     user_ip = request.remote_addr
     if (
         constants.COLUMN_BLOCK_IP in settings
@@ -297,7 +318,7 @@ def ajax_submitquantum(request):
     sdfstr = sdfstr.decode("utf8")
     for _ in range(3):
         i = sdfstr.index("\n")
-        sdfstr = sdfstr[i + 1 :]
+        sdfstr = sdfstr[i+1:]
     sdfstr = "\n" * 3 + sdfstr
 
     # Inject numerical calculation parameters (e.g., "theory_level") in
@@ -324,7 +345,7 @@ def ajax_submitquantum(request):
         _logger.info(f"{hashkey} exists")
         return msg
 
-    # The calculation is valid and does not exists, pass to pipeline
+    # The calculation is valid and does not exist, pass to pipeline
     _logger.info(f"{hashkey} create")
 
     molecule_info = {"sdfstr": sdfstr, "molobj": molobj, "hashkey": hashkey}
