@@ -79,10 +79,18 @@
                       <i class="fa fa-download"></i>
                       GAMESS Input File
                     </a>
+<!--                    <a-->
+<!--                      class="button"-->
+<!--                      download="optimization.out"-->
+<!--                      href="../data/{{hashkey}}/{{hashkey}}.out"-->
+<!--                      media_type="text">-->
+<!--                      <i class="fa fa-download"></i>-->
+<!--                      GAMESS Output-->
+<!--                    </a>-->
                     <a
                       class="button"
                       download="optimization.out"
-                      href="../data/{{hashkey}}/{{hashkey}}.out"
+                      href="{{ url_for('download', filename='downloadFile.txt') }}"
                       media_type="text">
                       <i class="fa fa-download"></i>
                       GAMESS Output
