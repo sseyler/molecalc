@@ -33,7 +33,7 @@ def editor(request):
     """
     Standard view for MolCalc. Static HTML.
     """
-    return {}
+    return {"test": 42}
 
 
 @view_config(
@@ -47,6 +47,8 @@ def view_calculation(request):
     # Get the key
     matches = request.matchdict
     hashkey = matches["one"]
+
+    print(matches)
 
     # Look up the key
     calculation = (
