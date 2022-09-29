@@ -82,7 +82,6 @@ def view_calculations(request):
 
 # Static page view
 
-
 @view_config(route_name="about", renderer="templates/page_about.html")
 def about(request):
     """
@@ -135,7 +134,6 @@ def ajax_sdf_to_smiles(request):
 
 
 # Ajax views
-
 
 @view_config(route_name="smiles_to_sdf", renderer="json")
 def ajax_smiles_to_sdf(request):
