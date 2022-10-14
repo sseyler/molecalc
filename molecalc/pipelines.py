@@ -6,11 +6,11 @@ import models
 
 import numpy as np
 
-from molcalc_lib import gamess_calculations
+from molecalc_lib import gamess_calculations
 from ppqm import chembridge, misc
 from ppqm.constants import COLUMN_COORDINATES, COLUMN_ENERGY
 
-_logger = logging.getLogger("molcalc:pipe")
+_logger = logging.getLogger("molecalc:pipe")
 
 
 def calculation_pipeline(molinfo, settings):

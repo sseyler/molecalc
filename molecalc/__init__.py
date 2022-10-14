@@ -85,8 +85,8 @@ def get_config(config=None):
     # Ajax paths
     config.add_route("submitquantum", "/ajax/submitquantum")
     config.add_route("downloadquantum", "/ajax/downloadquantum")
-    config.add_route("smiles_to_sdf", "/ajax/smiles")
-    config.add_route("sdf_to_smiles", "/ajax/sdf")
+    # config.add_route("smiles_to_sdf", "/ajax/smiles")
+    # config.add_route("sdf_to_smiles", "/ajax/sdf")
 
     # database
     settings = config.get_settings()
@@ -132,7 +132,7 @@ def main(global_conf, **settings):
 
     # Load custom sections from ini file
     # TODO Is there a better solution to read settings?
-    sections = ["gamess", "scr", "molcalc"]
+    sections = ["gamess", "scr", "molecalc"]
     parser = configparser.ConfigParser()
     parser.read(global_conf["__file__"])
     for section in sections:

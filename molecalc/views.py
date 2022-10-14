@@ -11,11 +11,11 @@ from pyramid.view import notfound_view_config, view_config
 from rdkit import Chem
 from rdkit.Chem import AllChem
 
-from molcalc import constants
-from molcalc_lib import gamess_results
+from molecalc import constants
+from molecalc_lib import gamess_results
 from ppqm import chembridge
 
-_logger = logging.getLogger("molcalc:views")
+_logger = logging.getLogger("molecalc:views")
 
 # Error Views
 
@@ -36,9 +36,7 @@ def editor(request):
     return {"test": 42}
 
 
-@view_config(
-    route_name="calculation", renderer="templates/page_calculation.html"
-)
+@view_config(route_name="calculation", renderer="templates/page_calculation.html")
 def view_calculation(request):
     """
     View for looking up calculations.
@@ -68,144 +66,23 @@ def view_calculation(request):
     return data
 
 
-@view_config(
-    route_name="calculations", renderer="templates/page_calculation.html"
-)
-def view_calculations(request):
-    """
-    Statistic about current calculations? Iono, maybe not.
-    Kind of destroyed the IO / browser last time
-    """
-    raise httpexceptions.exception_response(404)
-    return {}
-
-
 # Static page view
 
 @view_config(route_name="about", renderer="templates/page_about.html")
 def about(request):
-    """
-    static about page
+    """Static about page
     """
     return {}
 
 
 @view_config(route_name="help", renderer="templates/page_help.html")
 def page_help(request):
-    """
-    static help page
+    """Static help page
     """
     return {}
 
 
-@view_config(route_name="sdf_to_smiles", renderer="json")
-def ajax_sdf_to_smiles(request):
-    """
-    sdf to smiles conversion
-    """
-    return {"message", "disabled"}
-
-    # if not request.POST:
-    #     return {
-    #         "error": "Error 55 - Missing key",
-    #         "message": "Error. Missing information.",
-    #     }
-    #
-    # try:
-    #     sdf = request.POST["sdf"].encode("utf-8")
-    # except Exception:
-    #     return {
-    #         "error": "Error 60 - get error",
-    #         "message": "Error. Missing information.",
-    #     }
-    #
-    # # Get smiles
-    # smiles, status = chembridge.sdf_to_smiles(sdf)
-    # if smiles is None:
-    #
-    #     status = status.split("]")
-    #     status = status[-1]
-    #
-    #     return {"error": "Error 69 - rdkit error", "message": status}
-    #
-    # msg = {"smiles": smiles}
-    #
-    # return msg
-
-
 # Ajax views
-
-@view_config(route_name="smiles_to_sdf", renderer="json")
-def ajax_smiles_to_sdf(request):
-    """
-    convert SMILES to SDF format
-    """
-
-    return {"message", "disabled"}
-
-    # if not request.POST:
-    #     return {
-    #         "error": "Error 53 - Missing key",
-    #         "message": "Error. Missing information.",
-    #     }
-    #
-    # try:
-    #     smiles = request.POST["smiles"].encode("utf-8")
-    # except Exception as e:
-    #     return {
-    #         "error": "Error 58 - get error",
-    #         "message": "Error. Missing information.",
-    #         "exception": f"{e}",
-    #     }
-    #
-    # sdfstr = chembridge.smiles_to_sdfstr(smiles)
-    # msg = {"sdf": sdfstr}
-    #
-    # return msg
-
-
-# @view_config(route_name="downloadquantum", renderer="json")
-# def ajax_downloadquantum(request):
-#
-#     # # Get the key
-#     # matches = request.matchdict
-#     # hashkey = matches["one"]
-#
-#     import zipfile
-#
-#     if not request.POST:
-#         return {
-#             "error": "Error 128 - empty post",
-#             "message": "Error. Empty post.",
-#         }
-#
-#     hashkey = get_hashkey(request)
-#
-#     msg = {"smiles": smiles, "hashkey": hashkey}
-#
-#     with zipfile.ZipFile("gamess_data.zip", mode='w') as archive:
-#         archive.write(FileFromPPQMLoL)
-#
-#     return msg
-
-# def get_hashkey(request):
-#     sdfstr = request.POST["sdf"].encode("utf-8")
-#     theory_level = request.POST.get('theory_level', 'pm3')
-#
-#     sdfstr = fix_sdfstr(sdfstr)
-#     calc_str = sdfstr + "\n" * 3 + theory_level
-#
-#     # hash on sdf (conformer)
-#     hshobj = hashlib.md5(calc_str.encode())
-#     return hshobj.hexdigest()
-#
-#
-# def fix_sdfstr(sdfstr):
-#     sdfstr = sdfstr.decode("utf8")
-#     for _ in range(3):
-#         i = sdfstr.index("\n")
-#         sdfstr = sdfstr[i+1:]
-#     return "\n" * 3 + sdfstr
 
 
 @view_config(route_name="submitquantum", renderer="json")

@@ -54,18 +54,18 @@ ppqm
 ppqm_src
 ppqm.git
 chemhelp
-molcalc/chemhelp
+molecalc/chemhelp
 .test
 .tmptest
 
 # ignore downloaded packages
-molcalc/static/js/*jquery*
-molcalc/static/fontawesome
-molcalc/static/jquery
-molcalc/static/chemdoodleweb
-molcalc/static/jsmol
-molcalc/static/demo
-molcalc/static/rdkit
+molecalc/static/js/*jquery*
+molecalc/static/fontawesome
+molecalc/static/jquery
+molecalc/static/chemdoodleweb
+molecalc/static/jsmol
+molecalc/static/demo
+molecalc/static/rdkit
 
 # ignore calculated data
-molcalc/data/
+molecalc/data/

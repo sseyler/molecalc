@@ -1,6 +1,6 @@
 from context import CONFIG, RESOURCES, SCR
 
-from molcalc import pipelines
+from molecalc import pipelines
 from ppqm import chembridge
 
 GAMESS_OPTIONS = {

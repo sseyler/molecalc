@@ -2,9 +2,9 @@ import pytest
 
 from ppqm import chembridge
 
-# from context import ppqm, molcalc
+# from context import ppqm, molecalc
 #
-# from molcalc.ppqm import chembridge
+# from molecalc.ppqm import chembridge
 
 
 TEST_ERROR_SMILES = ["C[NH4+]"]

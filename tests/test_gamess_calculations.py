@@ -7,7 +7,7 @@ from rdkit import Chem
 from rdkit.Chem import AllChem
 
 import ppqm
-from molcalc_lib import gamess_calculations
+from molecalc_lib import gamess_calculations
 from ppqm import chembridge
 
 GAMESS_OPTIONS = {

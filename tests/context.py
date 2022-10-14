@@ -4,13 +4,13 @@ import pathlib
 import sys
 
 try:
-    import molcalc
-    import molcalc_lib
+    import molecalc
+    import molecalc_lib
 except ImportError:
     parent = str(pathlib.Path(__file__).absolute().parent.parent)
     sys.path.insert(0, parent)
-    import molcalc
-    import molcalc_lib
+    import molecalc
+    import molecalc_lib
 
 import ppqm
 
@@ -29,8 +29,8 @@ def ini_settings(filename):
 CONFIG = ini_settings("development.ini")
 pathlib.Path(SCR).mkdir(parents=True, exist_ok=True)
 
-molcalc = molcalc
-molcalc_lib = molcalc_lib
+molcalc = molecalc
+molcalc_lib = molecalc_lib
 ppqm = ppqm
 
 logging.basicConfig(level=logging.DEBUG)

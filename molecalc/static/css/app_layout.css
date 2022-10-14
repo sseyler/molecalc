@@ -480,7 +480,7 @@
     grid-area: title;
 }
 /* "onecol" is specifically for thermochem calc tab, so this overrides
-    ".molcalc.calculation .mc-content .calc" above
+    ".molecalc.calculation .mc-content .calc" above
 */
 .molcalc.calculation .mc-content .calc.onecol {
     grid-template-columns: 1fr 2fr;

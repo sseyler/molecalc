@@ -7,11 +7,12 @@ with open(os.path.join(here, 'requirements.txt')) as f:
     requires = f.readlines()
 
 setup(
-    name='molcalc',
+    name='molecalc',
     version='0.1',
     description='MoleCalc',
-    author='',
-    author_email='',
+    author='Sean L Seyler',
+    author_email='slseyler@asu.edu',
+    keywords='web chemistry asu gamess quantum',
     url='',
     packages=find_packages(),
     include_package_data=True,
@@ -19,7 +20,7 @@ setup(
     install_requires=requires,
     entry_points={
         'paste.app_factory': [
-            'main = molcalc:main',
+            'main = molecalc:main',
         ],
     },
 )
